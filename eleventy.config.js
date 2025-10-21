@@ -8,4 +8,8 @@ export default function(eleventyConfig) {
 		// Supported selectors: https://www.npmjs.com/package/posthtml-match-helper
 		bundleHtmlContentFromSelector: "style",
 	});
+
+    eleventyConfig.addFilter('date', function(str) {
+        return new Date(str).toISOString().split('T')[0];
+    });
 };

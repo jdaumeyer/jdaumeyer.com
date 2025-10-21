@@ -1,0 +1,21 @@
+.postlink {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.postlink h4 {
+    margin: 0;
+    font-weight: 400;
+}
+
+
+.postlist {
+    list-style: none;
+    padding: 0;
+}
+
+
+
+
+
