@@ -1,0 +1,158 @@
+<!doctype html>
+
+<html>
+<head>
+  <title> This is my second post with a much longer title. </title>
+
+  
+  <style>@import url('https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap');
+* {
+
+    /* Colorscheme */
+    color-scheme: light dark;
+    --background-color: light-dark(#eff1f5, #1e1e2e);
+    --text-color: light-dark(#4c4f69, #cdd6f4);
+    --light-accent: light-dark(#cba6f7, #ea76cb);
+    --dark-accent: light-dark(#ca9ee6, #ea76cb);
+}
+
+body {
+    margin: 0 auto;
+    max-width: min(65ch, 90vw);
+    font-size: 1em;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    fill: var(--text-color);
+    font-family: "Schibsted Grotesk", sans-serif;
+}
+
+main {
+    margin: 0 auto;
+}
+
+header {
+    margin: 2em auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header span {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    header span {
+        display: inline-block !important;
+    }
+}
+
+h1 {
+    font-weight: 900;
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: 900;
+}
+
+nav > ul {
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    list-style: none;
+    padding-left: 0;
+}
+
+a {
+    text-decoration: none;
+    border-bottom: 2px dotted;
+    transition: 200ms;
+}
+
+a:hover {
+    border-bottom: 2px solid;
+}
+
+/* Stack Layout */
+/* https://every-layout.dev/layouts/stack/ */
+.stack {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.stack > * {
+    margin-block: 0;
+}
+
+.stack > * + * {
+    margin-block-start: var(--space, 1.5rem);
+}
+
+
+/* https://www.a11yproject.com/posts/how-to-hide-content/ */
+.visually-hidden:not(:focus):not(:active) {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+#skip-link {
+	text-decoration: none;
+	background: var(--background-color);
+	color: var(--text-color);
+	padding: 0.5rem 1rem;
+	border: 1px solid var(--color-gray-90);
+	border-radius: 2px;
+}
+
+/* Prevent visually-hidden skip link fom pushing content around when focused */
+#skip-link.visually-hidden:focus {
+	position: absolute;
+	top: 1rem;
+	left: 1rem;
+	/* Ensure it is positioned on top of everything else when it is shown */
+	z-index: 999;
+}</style>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <a href="#main" id="skip-link" class="visually-hidden">Skip to main content</a>
+  <header>
+    <span> jdaumeyer.com </span>
+    <nav>
+      <ul>
+        <li><a href="/"> /home </a></li>
+        <li><a href="/now"> /now </a></li>
+        <li><a href="/resume"> /résumé </a></li>
+        <li><a href="/feed"> /follow </a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main" class="stack">
+    
+<h1> This is my second post with a much longer title. </h1>
+
+<content>
+<p>This is a post</p>
+
+</content>
+
+  </main>
+
+  <footer>
+    <em>Built using <a href="https://www.11ty.dev/">Eleventy v3.1.2</a></em>
+</footer>
+
+</body>
+</html>

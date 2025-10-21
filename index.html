@@ -1,0 +1,247 @@
+<!doctype html>
+
+<html>
+<head>
+  <title> jdaumeyer.com </title>
+
+  
+  <style>@import url('https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap');
+* {
+
+    /* Colorscheme */
+    color-scheme: light dark;
+    --background-color: light-dark(#eff1f5, #1e1e2e);
+    --text-color: light-dark(#4c4f69, #cdd6f4);
+    --light-accent: light-dark(#cba6f7, #ea76cb);
+    --dark-accent: light-dark(#ca9ee6, #ea76cb);
+}
+
+body {
+    margin: 0 auto;
+    max-width: min(65ch, 90vw);
+    font-size: 1em;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    fill: var(--text-color);
+    font-family: "Schibsted Grotesk", sans-serif;
+}
+
+main {
+    margin: 0 auto;
+}
+
+header {
+    margin: 2em auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header span {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    header span {
+        display: inline-block !important;
+    }
+}
+
+h1 {
+    font-weight: 900;
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: 900;
+}
+
+nav > ul {
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    list-style: none;
+    padding-left: 0;
+}
+
+a {
+    text-decoration: none;
+    border-bottom: 2px dotted;
+    transition: 200ms;
+}
+
+a:hover {
+    border-bottom: 2px solid;
+}
+
+/* Stack Layout */
+/* https://every-layout.dev/layouts/stack/ */
+.stack {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.stack > * {
+    margin-block: 0;
+}
+
+.stack > * + * {
+    margin-block-start: var(--space, 1.5rem);
+}
+
+
+/* https://www.a11yproject.com/posts/how-to-hide-content/ */
+.visually-hidden:not(:focus):not(:active) {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+#skip-link {
+	text-decoration: none;
+	background: var(--background-color);
+	color: var(--text-color);
+	padding: 0.5rem 1rem;
+	border: 1px solid var(--color-gray-90);
+	border-radius: 2px;
+}
+
+/* Prevent visually-hidden skip link fom pushing content around when focused */
+#skip-link.visually-hidden:focus {
+	position: absolute;
+	top: 1rem;
+	left: 1rem;
+	/* Ensure it is positioned on top of everything else when it is shown */
+	z-index: 999;
+}
+.card-holder {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 1em;
+}
+
+@media (min-width: 768px) {
+    .card-holder {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+
+.card {
+    border: 1px solid grey;
+    border-radius: 16px;
+    padding: 1em;
+    transition: 200ms;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: var(--light-accent, #f4f4f4)
+}
+
+.card svg {
+    height: 1.5em;
+}
+
+.card header {
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    justify-content: flex-start;
+}
+
+.card header h2, h3 {
+    margin: 0;
+    font-size: 1.25em;
+}
+
+a.card {
+    text-decoration: none;
+    color: var(--text-color, black);
+}
+
+a.card:hover {
+    background-color: var(--dark-accent, lightgrey);
+    cursor: pointer;
+    border: 1px solid grey;
+}</style>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <a href="#main" id="skip-link" class="visually-hidden">Skip to main content</a>
+  <header>
+    <span> jdaumeyer.com </span>
+    <nav>
+      <ul>
+        <li><a href="/"> /home </a></li>
+        <li><a href="/now"> /now </a></li>
+        <li><a href="/resume"> /résumé </a></li>
+        <li><a href="/feed"> /follow </a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main" class="stack">
+    
+<section id="about" class="stack">
+    <h1> Hi, I'm <i>Jackie Daumeyer</i>! </h1>
+    <p>
+        I'm a Computer Information Sciences and Human Computer Interaction graduate of the Ohio State University
+    </p>
+    <p>
+        This website houses my writing, projects, and documents my life.
+    </p>
+</section>
+
+<section id="cards" class="card-holder">
+    
+    <a class="card" href="mailto:jacklynnnnnn@proton.me">
+        <header>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M112 128C85.5 128 64 149.5 64 176C64 191.1 71.1 205.3 83.2 214.4L291.2 370.4C308.3 383.2 331.7 383.2 348.8 370.4L556.8 214.4C568.9 205.3 576 191.1 576 176C576 149.5 554.5 128 528 128L112 128zM64 260L64 448C64 483.3 92.7 512 128 512L512 512C547.3 512 576 483.3 576 448L576 260L377.6 408.8C343.5 434.4 296.5 434.4 262.4 408.8L64 260z"></path></svg>
+            <h2> Contact </h2>
+        </header>
+        <p> Reach out to me at jacklynnnnnn@proton.me </p>
+    </a>
+    <div class="card">
+        <header>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M96 128C96 110.3 110.3 96 128 96C357.8 96 544 282.2 544 512C544 529.7 529.7 544 512 544C494.3 544 480 529.7 480 512C480 317.6 322.4 160 128 160C110.3 160 96 145.7 96 128zM96 480C96 444.7 124.7 416 160 416C195.3 416 224 444.7 224 480C224 515.3 195.3 544 160 544C124.7 544 96 515.3 96 480zM128 224C287.1 224 416 352.9 416 512C416 529.7 401.7 544 384 544C366.3 544 352 529.7 352 512C352 388.3 251.7 288 128 288C110.3 288 96 273.7 96 256C96 238.3 110.3 224 128 224z"></path></svg>
+            <h2> Follow </h2>
+        </header>
+        <p> Get updates on all my new blog posts with RSS. </p>
+    </div>
+    <div class="card">
+        <header>
+            <h2> This is a card </h2>
+        </header>
+        <p> Hello! lorem ipsum dolors set amet </p>
+    </div>
+    <div class="card">
+        <header>
+            <h2> This is a card </h2>
+        </header>
+        <p> Hello! lorem ipsum dolors set amet </p>
+    </div>
+</section>
+
+<section id="bloglist">
+    <h1> Blog </h1>
+    <ul><li>This is my second post with a much longer title.</li></ul>
+</section>
+
+  </main>
+
+  <footer>
+    <em>Built using <a href="https://www.11ty.dev/">Eleventy v3.1.2</a></em>
+</footer>
+
+</body>
+</html>
