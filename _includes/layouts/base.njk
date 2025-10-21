@@ -2,7 +2,7 @@
 
 <html>
 <head>
-  <title> {{title}} </title>
+  <title> {{ title or metadata.title }} </title>
 
   <style>{% include "css/index.css" %}</style>
   <style>{% getBundle "css" %}</style>
@@ -11,7 +11,7 @@
 <body>
   <a href="#main" id="skip-link" class="visually-hidden">Skip to main content</a>
   <header>
-    <span> jdaumeyer.com </span>
+    <span> {{metadata.title}} </span>
     <nav>
       <ul>
         <li><a href="/"> /home </a></li>
