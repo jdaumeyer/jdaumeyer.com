@@ -6,6 +6,7 @@
 
   <style>{% include "css/index.css" %}</style>
   <style>{% getBundle "css" %}</style>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
@@ -16,7 +17,7 @@
       <ul>
         <li><a href="/"> /home </a></li>
         <li><a href="/now"> /now </a></li>
-        <li><a href="/resume"> /resumé </a></li>
+        <li><a href="/resume"> /résumé </a></li>
         <li><a href="/feed"> /follow </a></li>
       </ul>
     </nav>
@@ -25,5 +26,7 @@
   <main id="main" class="stack">
     {{ content | safe }}
   </main>
+
+  {% include "footer.njk" %}
 </body>
 </html>
