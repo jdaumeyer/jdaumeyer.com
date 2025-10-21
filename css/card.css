@@ -1,0 +1,43 @@
+.card-holder {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1em;
+}
+
+.card {
+    border: 1px solid grey;
+    border-radius: 16px;
+    padding: 1em;
+    transition: 200ms;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: var(--light-accent, #f4f4f4)
+}
+
+.card svg {
+    height: 1.5em;
+}
+
+.card header {
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    justify-content: flex-start;
+}
+
+.card header h3 {
+    margin: 0;
+}
+
+a.card {
+    text-decoration: none;
+    color: var(--text-color, black);
+}
+
+a.card:hover {
+    background-color: lightgray;
+    cursor: pointer;
+    border: 1px solid grey;
+}

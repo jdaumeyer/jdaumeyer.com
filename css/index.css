@@ -1,0 +1,77 @@
+body {
+    width: 65ch;
+    max-width: 80ch;
+    margin: 0 auto;
+}
+
+header {
+    margin: 2em 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav > ul {
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    border-bottom: 2px dotted;
+    transition: 200ms;
+}
+
+a:hover {
+    border-bottom: 2px solid;
+}
+
+/* Stack Layout */
+/* https://every-layout.dev/layouts/stack/ */
+.stack {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.stack > * {
+    margin-block: 0;
+}
+
+.stack > * + * {
+    margin-block-start: var(--space, 1.5rem);
+}
+
+
+/* https://www.a11yproject.com/posts/how-to-hide-content/ */
+.visually-hidden:not(:focus):not(:active) {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+#skip-link {
+	text-decoration: none;
+	background: var(--background-color);
+	color: var(--text-color);
+	padding: 0.5rem 1rem;
+	border: 1px solid var(--color-gray-90);
+	border-radius: 2px;
+}
+
+/* Prevent visually-hidden skip link fom pushing content around when focused */
+#skip-link.visually-hidden:focus {
+	position: absolute;
+	top: 1rem;
+	left: 1rem;
+	/* Ensure it is positioned on top of everything else when it is shown */
+	z-index: 999;
+}

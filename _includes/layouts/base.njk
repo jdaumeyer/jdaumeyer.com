@@ -1,0 +1,29 @@
+<!doctype html>
+
+<html>
+<head>
+  <title> {{title}} </title>
+
+  <style>{% include "css/index.css" %}</style>
+  <style>{% getBundle "css" %}</style>
+</head>
+
+<body>
+  <a href="#main" id="skip-link" class="visually-hidden">Skip to main content</a>
+  <header>
+    <span> jdaumeyer.com </span>
+    <nav>
+      <ul>
+        <li><a href="/"> /home </a></li>
+        <li><a href="/now"> /now </a></li>
+        <li><a href="/resume"> /resumé </a></li>
+        <li><a href="/feed"> /follow </a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main" class="stack">
+    {{ content | safe }}
+  </main>
+</body>
+</html>
