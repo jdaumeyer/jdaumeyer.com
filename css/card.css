@@ -1,8 +1,15 @@
 .card-holder {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     grid-gap: 1em;
 }
+
+@media (min-width: 768px) {
+    .card-holder {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
 
 .card {
     border: 1px solid grey;

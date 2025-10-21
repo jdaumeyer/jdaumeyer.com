@@ -1,15 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap');
 * {
-    --background-color: #eff1f5;
-    --light-accent: #cba6f7;
-    --dark-accent: #ca9ee6;
+
+    /* Colorscheme */
+    color-scheme: light dark;
+    --background-color: light-dark(#eff1f5, #1e1e2e);
+    --text-color: light-dark(#4c4f69, #cdd6f4);
+    --light-accent: light-dark(#cba6f7, #ea76cb);
+    --dark-accent: light-dark(#ca9ee6, #ea76cb);
 }
 
 body {
     margin: 0 auto;
-    max-width: 70ch;
-    min-width: 50ch;
+    max-width: min(65ch, 90vw);
+    font-size: 1em;
     background-color: var(--background-color);
+    color: var(--text-color);
+    fill: var(--text-color);
     font-family: "Schibsted Grotesk", sans-serif;
 }
 
@@ -25,9 +31,24 @@ header {
     align-items: center;
 }
 
+header span {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    header span {
+        display: inline-block !important;
+    }
+}
+
 h1 {
     font-weight: 900;
-    font-size: 3em;
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: 900;
 }
 
 nav > ul {
@@ -36,6 +57,7 @@ nav > ul {
     flex-direction: row;
     gap: 1em;
     list-style: none;
+    padding-left: 0;
 }
 
 a {
