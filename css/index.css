@@ -11,7 +11,6 @@
 
 body {
     margin: 0 auto;
-    max-width: min(65ch, 90vw);
     font-size: 1em;
     background-color: var(--background-color);
     color: var(--text-color);
@@ -21,6 +20,10 @@ body {
 
 main {
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
 }
 
 header {
@@ -28,11 +31,23 @@ header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    max-width: min(75ch, 90vw);
     align-items: center;
+}
+
+footer {
+    
+    margin: 2em auto;
+    width: min(75ch, 90vw);
 }
 
 header span {
     display: none;
+}
+
+section {
+    
+    width: min(75ch, 90vw);
 }
 
 @media (min-width: 768px) {
@@ -115,3 +130,6 @@ a:hover {
 	/* Ensure it is positioned on top of everything else when it is shown */
 	z-index: 999;
 }
+
+
+

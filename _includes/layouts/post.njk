@@ -1,9 +1,8 @@
 ---
 layout: "layouts/base.njk"
 ---
-
+<style>{% include "css/post.css" %}</style>
+<article>
 <h1> {{ title }} </h1>
-
-<content>
 {{ content | safe }}
-</content>
+</article>
