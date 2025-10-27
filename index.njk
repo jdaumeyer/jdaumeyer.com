@@ -41,12 +41,8 @@ layout: "layouts/base.njk"
         <p> Hello! lorem ipsum dolors set amet </p>
     </div>
 </section>
-
-<section id="bloglist">
-    <h1> Blog </h1>
-    <ul>
-        {%- for post in collections.posts -%}
-            <li>{{ post.data.title }}</li>
-        {%- endfor -%}
-    </ul>
+section id="bloglist">
+  <h2> Blog </h2>
+  {% include "postlist.njk" %}
+>>>>>>> postlink-component
 </section>
