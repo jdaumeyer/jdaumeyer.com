@@ -1,7 +1,7 @@
 .card-holder {
     display: grid;
     grid-template-columns: 1fr;
-    grid-gap: 1em;
+    grid-gap: 2em;
 }
 
 @media (min-width: 768px) {
@@ -10,9 +10,8 @@
     }
 }
 
-
 .card {
-    border: 1px solid grey;
+    border: 1px solid var(--dark-accent, grey);
     border-radius: 16px;
     padding: 1em;
     transition: 200ms;
@@ -36,7 +35,7 @@
 
 .card header h2, h3 {
     margin: 0;
-    font-size: 1.25em;
+    font-size: 1.25rem;
 }
 
 a.card {
@@ -47,5 +46,6 @@ a.card {
 a.card:hover {
     background-color: var(--dark-accent, lightgrey);
     cursor: pointer;
-    border: 1px solid grey;
+    border: 1px solid var(--dark-accent, grey);
+    transform: scale(1.03);
 }
