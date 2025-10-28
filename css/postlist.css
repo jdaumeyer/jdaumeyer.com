@@ -13,6 +13,32 @@
 .postlist {
     list-style: none;
     padding: 0;
+    --postlist-hover-transition-length: 300ms;
+}
+
+.postlist li {
+    transition: var(--postlist-hover-transition-length);
+    padding: 0.5em 0em;
+    position: relative;
+    border-bottom: 1px solid white;
+}
+
+
+.postlist li:has(a:hover) {
+    padding: 0.5em 1em;
+}
+
+.postlist li:after {
+    opacity: 0;
+    transition: var(--postlist-hover-transition-length);
+}
+
+.postlist li:has(a:hover):after {
+    opacity: 1;
+    position: absolute;
+    right: 0;
+    content: "->";
+    color: darkgray;
 }
 
 
