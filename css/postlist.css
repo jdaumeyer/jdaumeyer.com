@@ -16,26 +16,28 @@
     --postlist-hover-transition-length: 300ms;
 }
 
-.postlist li {
+.postlink {
     transition: var(--postlist-hover-transition-length);
     padding: 0.5em 0em;
     position: relative;
     border-bottom: 1px solid white;
+    display: flex;
 }
 
-
-.postlist li:has(a:hover) {
-    padding: 0.5em 1em;
+.postlink:has(a:hover) {
+    /* padding: 0.5em 1em; */
+    /* transform: scaleX(0.9); */
 }
 
-.postlist li:after {
+.postlink:after {
     opacity: 0;
     transition: var(--postlist-hover-transition-length);
 }
 
-.postlist li:has(a:hover):after {
+.postlink:has(a:hover):after {
     opacity: 1;
-    position: absolute;
+    /* position: absolute; */
+    flex-basis: max-content;
     right: 0;
     content: "->";
     color: darkgray;

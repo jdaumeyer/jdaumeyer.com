@@ -6,14 +6,16 @@
 
   <style>{% include "css/index.css" %}</style>
   <style>{% getBundle "css" %}</style>
+
+    <style> {% include "css/animations/slide-in-from-bottom.css" %} </style>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
   <a href="#main" id="skip-link" class="visually-hidden">Skip to main content</a>
   <header>
-    <span> {{ metadata.title }} </span>
-    <nav>
+    <span class="slide-in-from-left"> {{ metadata.title }} </span>
+    <nav class="slide-in-from-right">
       <ul>
         <li><a href="/"> /home </a></li>
         <li><a href="/now"> /now </a></li>
