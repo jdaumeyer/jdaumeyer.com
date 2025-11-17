@@ -1,51 +1,46 @@
 .card-holder {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-gap: 2em;
-}
-
-@media (min-width: 768px) {
-    .card-holder {
-        grid-template-columns: 1fr 1fr;
-    }
+    display: flex;
+    flex-flow: row wrap;
+    gap: var(--spacing, 1.5rem);
 }
 
 .card {
     border: 1px solid var(--dark-accent, grey);
     border-radius: 16px;
-    padding: 1em;
+    padding: calc(var(--spacing) / 2);
     transition: 200ms;
     display: flex;
+    flex: 1 0 calc(49% - ( 2 *  var(--spacing))); /* Ensure 2 cards per line */
     flex-direction: column;
     justify-content: flex-start;
-    background-color: var(--light-accent, #f4f4f4)
-}
+    background-color: var(--light-accent, #f4f4f4);
 
-.card svg {
-    height: 1.5em;
-}
+    & svg {
+        height: 1.5em;
+    }
 
-.card header {
-    margin: 0;
-    display: flex;
-    flex-direction: row;
-    gap: 1em;
-    justify-content: flex-start;
-}
+    & header {
+        margin: 0;
+        display: flex;
+        flex-direction: row;
+        gap: 1em;
+        justify-content: flex-start;
+    }
 
-.card header h2, h3 {
-    margin: 0;
-    font-size: 1.25rem;
+    & header h2, h3 {
+        margin: 0;
+        font-size: 1.25rem;
+    }
 }
 
 a.card {
     text-decoration: none;
     color: var(--text-color, black);
-}
 
-a.card:hover {
-    background-color: var(--dark-accent, lightgrey);
-    cursor: pointer;
-    border: 1px solid var(--dark-accent, grey);
-    transform: scale(1.03);
+    &:hover {
+        background-color: var(--dark-accent, lightgrey);
+        cursor: pointer;
+        border: 1px solid var(--dark-accent, grey);
+        transform: scale(1.03);
+    }
 }

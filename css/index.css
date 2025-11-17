@@ -7,10 +7,8 @@
     /* --text-color: light-dark(#4c4f69, #cdd6f4); */
     /* --light-accent: light-dark(#cba6f7, #ea76cb); */
     /* --dark-accent: light-dark(#ca9ee6, #ea76cb); */
-    --background-color: light-dark(#fff, #000);
-    --text-color: light-dark(#000, #fff);
-    --light-accent: light-dark(#eee, #333);
-    --dark-accent: light-dark(#ddd, #555);
+    --spacing: 2rem;
+    sizing: border-box;
 
 body {
     margin: 0 auto;
@@ -23,11 +21,9 @@ body {
 
 main {
     margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    justify-items: center;
-    align-items: center;
+    max-width: min(90ch, 90vw);
 }
+
 
 header {
     margin: 2em auto;
@@ -39,18 +35,12 @@ header {
 }
 
 footer {
-    
     margin: 2em auto;
     width: min(90ch, 90vw);
 }
 
 header span {
     display: none;
-}
-
-section {
-    
-    width: min(90ch, 90vw);
 }
 
 @media (min-width: 768px) {
@@ -67,53 +57,10 @@ h1 {
 h2 {
     font-size: 1.4rem;
     font-weight: 900;
+    margin: 0;
 }
 
-#bloglist {
-    display: flex;
-    flex-direction: row-reverse;
-    flex-wrap: wrap;
-    gap: 1ch;
-    justify-content: space-between;
-}
 
-#bloglist h2 {
-    flex-basis: 100%;
-}
-
-#bloglist ol {
-    flex-grow: 1;
-}
-
-#bloglist aside {
-    flex: 1 0 20ch;
-
-    & ul {
-        display: flex;
-        flex-wrap: wrap;
-        list-style: none;
-        padding: 0;
-        gap: 0.5em;
-
-        & li {
-            border: 1px solid var(--dark-accent);
-            background-color: var(--light-accent);
-            outline: none;
-            padding: 0.3em;
-            border-radius: 10px;
-            transition: 200ms;
-
-            &:hover {
-                background-color: var(--dark-accent);
-                transform: scale(1.1);
-            }
-
-            & a {
-                border: none;
-            }
-        }
-    }
-}
 
 
 nav > ul {
@@ -129,6 +76,7 @@ a {
     text-decoration: none;
     border-bottom: 2px dotted;
     transition: 200ms;
+    color: var(--text-color);
 }
 
 a:hover {

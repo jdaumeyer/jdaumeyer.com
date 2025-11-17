@@ -18,9 +18,9 @@
 
 .postlink {
     transition: var(--postlist-hover-transition-length);
-    padding: 0.5em 0em;
+    padding: calc(var(--spacing) / 4) 0em;
     position: relative;
-    border-bottom: 1px solid white;
+    border-bottom: 2px solid var(--dark-accent, white);
     display: flex;
 }
 

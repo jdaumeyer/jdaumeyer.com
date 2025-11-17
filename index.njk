@@ -4,7 +4,7 @@ layout: "layouts/base.njk"
 
 <section id="about" class="stack">
     <style>{% include "css/animations/slide-in-from-bottom.css" %} </style>
-    <h1 class="slide-in-from-bottom"> Hi, I'm <i>{{ metadata.author.name }}</i>! </h1>
+    <h1 class="slide-in-from-bottom"> Hi, I'm <a class="h-card" href="{{metadata.url}}"> {{ metadata.author.name }}</a>! </h1>
     <p>
         I'm a Computer Information Sciences and Human Computer Interaction graduate of the Ohio State University
     </p>
@@ -42,17 +42,17 @@ layout: "layouts/base.njk"
         <p> Hello! lorem ipsum dolors set amet </p>
     </div>
 </section>
+
 <section id="bloglist">
+    <style>{% include "css/bloglist.css" %}</style>
   <h2> Blog </h2>
-  <aside>
-    <ul>
+    <ul class="taglist">
         <li><a> now </a></li>
         <li><a> css </a></li>
         <li><a> reading </a></li>
         <li><a> c </a></li>
         <li><a> writing </a></li>
     </ul>
-  </aside>
   {% include "postlist.njk" %}
 
 </section>
