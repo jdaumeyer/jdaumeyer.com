@@ -46,13 +46,7 @@ layout: "layouts/base.njk"
 <section id="bloglist">
     <style>{% include "css/bloglist.css" %}</style>
   <h2> Blog </h2>
-    <ul class="taglist">
-        <li><a> now </a></li>
-        <li><a> css </a></li>
-        <li><a> reading </a></li>
-        <li><a> c </a></li>
-        <li><a> writing </a></li>
-    </ul>
+  {% include "taglist.njk" %}
   {% include "postlist.njk" %}
 
 </section>

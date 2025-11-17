@@ -12,4 +12,17 @@ export default function(eleventyConfig) {
     eleventyConfig.addFilter('date', function(str) {
         return new Date(str).toISOString().split('T')[0];
     });
+
+	eleventyConfig.addFilter("filterTagList", function filterTagList(tags) {
+		return (tags || []).filter(tag => ["all", "posts"].indexOf(tag) === -1);
+	});
+
+	eleventyConfig.addFilter("alphabetically", strings =>
+		(strings || []).sort((b, a) => b.localeCompare(a))
+	);
+
+	eleventyConfig.addFilter("getKeys", target => {
+		return Object.keys(target);
+	});
+
 };

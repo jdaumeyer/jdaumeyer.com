@@ -1,0 +1,46 @@
+#bloglist {
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    gap: 1ch;
+    justify-content: space-between;
+}
+
+#bloglist h2 {
+    flex-basis: 100%;
+}
+
+.postlist {
+    flex-grow: 1;
+}
+
+.taglist {
+    flex: 1 0 20ch;
+
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 0.5em;
+
+    list-style: none;
+    padding: 0;
+
+    & li {
+        border: 1px solid var(--dark-accent);
+        background-color: var(--light-accent);
+        padding: calc(var(--spacing) / 4);
+        border-radius: 10px;
+        transition: 200ms;
+
+        &:hover {
+            background-color: var(--dark-accent);
+            transform: scale(1.1);
+        }
+
+        & a {
+            border: none;
+        }
+    }
+}
+}
