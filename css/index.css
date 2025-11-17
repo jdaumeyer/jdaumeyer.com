@@ -17,13 +17,13 @@ body {
     color: var(--text-color);
     fill: var(--text-color);
     font-family: "Schibsted Grotesk", sans-serif;
+    line-height: 1.5rem;
 }
 
 main {
     margin: 0 auto;
     max-width: min(90ch, 90vw);
 }
-
 
 header {
     margin: 2em auto;
