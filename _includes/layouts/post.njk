@@ -2,7 +2,16 @@
 layout: "layouts/base.njk"
 ---
 <style>{% include "css/post.css" %}</style>
-<article>
-<h1> {{ title }} </h1>
+<article class="stack h-entry">
+<h1 class="p-name"> {{ title }} </h1>
+<ul class="article-meta">
+    <li class="article-publish-time chip"><time class="dt-published" datetime="{{page.date}}"> {{ page.date | date }}</time></li>
+    {% for tag in tags | filterTagList %}
+        {% set tagUrl %}/tags/{{tag | slugify}}/{% endset %}
+        <li class="article-tag chip"><a href="{{ tagUrl }}">{{tag}}</a></li>
+    {% endfor %}
+</ul>
+<content class="p-content">
 {{ content | safe }}
+</content>
 </article>
