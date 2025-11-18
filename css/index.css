@@ -17,27 +17,31 @@ body {
     color: var(--text-color);
     fill: var(--text-color);
     font-family: "Schibsted Grotesk", sans-serif;
-    line-height: 1.5rem;
+    line-height: 1.75rem;
+    max-width: min(80ch, 90vw);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+
 }
 
 main {
     margin: 0 auto;
-    max-width: min(90ch, 90vw);
 }
 
 header {
-    margin: 2em auto;
+    margin: 2em 0;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    max-width: min(90ch, 90vw);
     align-items: center;
 }
 
 footer {
-    margin: 2em auto;
-    width: min(90ch, 90vw);
+    margin: auto 0 0 0;
 }
+
 
 header span {
     display: none;

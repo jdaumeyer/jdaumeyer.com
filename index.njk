@@ -6,7 +6,8 @@ layout: "layouts/base.njk"
     <style>{% include "css/animations/slide-in-from-bottom.css" %} </style>
     <h1 class="slide-in-from-bottom"> Hi, I'm <a class="h-card" href="{{metadata.url}}"> {{ metadata.author.name }}</a>! </h1>
     <p>
-        I'm a Computer Information Sciences and Human Computer Interaction graduate of the Ohio State University
+        I'm a Computer Information Sciences and Human Computer Interaction graduate of the Ohio State University.
+        I enjoy reading, cooking, and playing games. And I live in Ohio.
     </p>
     <p>
         This website houses my writing, projects, and documents my life.
@@ -42,7 +43,11 @@ layout: "layouts/base.njk"
         <p> Hello! lorem ipsum dolors set amet </p>
     </div>
 </section>
-
+<!-- 
+     {% renderTemplate "webc" %}
+     <expand-image></expand-image>
+     {% endrenderTemplate %}
+-->
 <section id="bloglist">
     <style>{% include "css/bloglist.css" %}</style>
   <h2> Blog </h2>

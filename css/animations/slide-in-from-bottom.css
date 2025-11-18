@@ -16,7 +16,7 @@
 .slide-in-from-bottom {
     animation: 500ms ease-in-out slide-in-from-bottom;
     position: relative;
-    overflow: clip;
+    /* overflow: clip; */
 }
 
 @keyframes slide-in-from-right {
