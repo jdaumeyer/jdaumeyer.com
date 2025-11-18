@@ -1,40 +1,22 @@
 /* Blog page css */
 article {
-    display: grid;
-    grid-template-columns: 1fr;
+    /* display: grid; */
+    /* grid-template-columns: 1fr; */
 }
 
-@media (min-width: 768px) {
-    article {
-        grid-template-columns: 20ch 10ch 45ch 10ch 20ch;
-        gap: 1em;
-        row-gap: 2em;
-    }
+article p {
+    /* width: 65ch; */
+}
 
-    article > h1,h2,h3 {
-        grid-column-start: 2;
-        grid-column-end: 5;
-    }
 
-    article > p {
-        grid-column-start: 2;
-        grid-column-end: 5;
-        overflow-wrap: break-word;
-        margin: 0;
-    }
+aside {
+    background-color: var(--light-accent);
+    padding: var(--spacing);
+}
 
-    article > p:has(+ aside) {
-        grid-column-end: 4;
-    }
-
-    article > aside {
-        grid-column-start: 4;
-        grid-column-end: 6;
-    }
-
-    article > aside::nth-child(even) {
-        grid-column-start: 1;
-        grid-column-end: 3;
-    }
-
+.article-meta {
+    display: flex;
+    list-style: none;
+    gap: var(--spacing);
+    padding: 0;
 }

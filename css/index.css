@@ -26,9 +26,9 @@ body {
 
 }
 
-main {
-    margin: 0 auto;
-}
+/* main { */
+/*     margin: 0 auto; */
+/* } */
 
 header {
     margin: 2em 0;
@@ -89,6 +89,25 @@ a {
 
 a:hover {
     border-bottom: 2px solid;
+    /* background-color: var(--dark-accent) */
+
+}
+
+.chip {
+        border: 1px solid var(--dark-accent);
+        background-color: var(--light-accent);
+        padding: calc(var(--spacing) / 4);
+        border-radius: 10px;
+        transition: 200ms;
+
+        &:has(a):hover {
+            background-color: var(--dark-accent);
+            transform: scale(1.1);
+        }
+
+        & a {
+            border: none;
+        }
 }
 
 /* Stack Layout */
