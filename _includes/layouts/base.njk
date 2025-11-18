@@ -9,6 +9,8 @@
   <style>{% include "css/animations/slide-in-from-bottom.css" %}</style>
   <style>{% getBundle "css" %}</style>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,200&icon_names=arrow_outward,mail,rss_feed" />
+<!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=mail" /> -->
 </head>
 
 <body>
@@ -17,10 +19,16 @@
     <span class="slide-in-from-left"> {{ metadata.title }} </span>
     <nav class="slide-in-from-right">
       <ul>
-        <li><a href="/"> /home </a></li>
-        <li><a href="/contact"> /contact </a></li>
-        <li><a href="/now"> /now </a></li>
-        <li><a href="/feed"> /follow </a></li>
+        {% for navItem in collections.nav %}
+        <li>
+          {{navItem.data.url}}
+          {% if page.url == navItem.url %}
+              <span class="current"> /{{navItem.data.title}} </span>
+          {% else %}
+              <a href="{{navItem.url}}"> /{{navItem.data.title}} </a>
+          {% endif %}
+        </li>
+        {% endfor %}
       </ul>
     </nav>
   </header>

@@ -22,7 +22,7 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    gap: 2em;
+    gap: calc(var(--spacing, 1.75rem) / 2);
 
 }
 
@@ -74,6 +74,10 @@ nav > ul {
     gap: 1em;
     list-style: none;
     padding-left: 0;
+
+    & .current {
+        font-weight: 800;
+    }
 }
 
 a {

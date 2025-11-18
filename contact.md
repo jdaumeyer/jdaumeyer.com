@@ -1,5 +1,7 @@
 ---
 layout: "layouts/base.njk"
+tags: nav
+title: contact
 ---
 
 # Places you can find me.
