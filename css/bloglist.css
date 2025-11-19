@@ -14,16 +14,19 @@
     flex-grow: 1;
 }
 
-.taglist {
+.taglist-wrapper {
     flex: 1 0 20ch;
 
 
+}
+
+.taglist {
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
     gap: 0.5em;
 
+
     list-style: none;
     padding: 0;
-
 }
