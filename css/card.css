@@ -1,5 +1,6 @@
 .card-holder {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     flex-flow: row wrap;
     gap: var(--spacing, 1.5rem);
 }

@@ -2,10 +2,8 @@
 <ol id="postlist" class="postlist stack h-feed">
     {%- for post in collections.posts -%}
         <li class="postlink h-entry">
-            <a class="u-url" href="{{post.url}}">
-                <h4 class="p-name"> {{ post.data.title }}</h4>
-            </a>
-            <time class="dt-published" datetime="{{ post.data.date | date }}"> {{ post.data.date | date }} </time>
+            <a class="u-url" href="{{post.url}}"> {{ post.data.title }} </a>
+            <time class="dt-published" datetime="{{ post.data.date}}"> {{ post.data.date | date }} </time>
         </li>
     {%- endfor -%}
 </ol>

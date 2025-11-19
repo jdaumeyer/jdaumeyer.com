@@ -4,7 +4,8 @@ tags: nav
 title: home
 ---
 
-<section id="about" class="stack">
+<section id="about">
+    <div class="stack">
     <style>{% include "css/animations/slide-in-from-bottom.css" %} </style>
     <h1 class="slide-in-from-bottom"> Hi, I'm <a class="h-card" href="{{metadata.url}}"> {{ metadata.author.name }}</a>! </h1>
     <p>
@@ -14,6 +15,8 @@ title: home
     <p>
         This website houses my writing, projects, and documents my life.
     </p>
+    </div>
+    <img src="img/jackie.png"></img>
 </section>
 
 <section id="cards" class="card-holder">
@@ -21,38 +24,22 @@ title: home
     <a class="card" href="/about/#contact">
         <h2>
             <span class="material-symbols-outlined">mail</span>
-             Contact </h2>
-        <p> Reach out to me at {{ metadata.author.email }} </p>
+             Get in touch</h2>
+        <p> See all the other places that you can find me on the internet. </p>
     </a>
-    <div class="card">
+    <a class="card" href="/blog/#follow">
         <h2>
             <span class="material-symbols-outlined">rss_feed</span>
              Follow
         </h2>
         <p> Get updates on all my new blog posts with RSS. </p>
-    </div>
-    <div class="card">
-        <header>
-            <h2> This is a card </h2>
-        </header>
-        <p> Hello! lorem ipsum dolors set amet </p>
-    </div>
-    <div class="card">
-        <header>
-            <h2> This is a card </h2>
-        </header>
-        <p> Hello! lorem ipsum dolors set amet </p>
-    </div>
+    </a>
+    {% include "components/lastfm.njk" %}
 </section>
-<!-- 
-     {% renderTemplate "webc" %}
-     <expand-image></expand-image>
-     {% endrenderTemplate %}
--->
+
 <section id="bloglist">
     <style>{% include "css/bloglist.css" %}</style>
     <h1><a href="/blog/"> Blog </a><span class="material-symbols-outlined">arrow_outward</span></h1>
   {% include "taglist.njk" %}
   {% include "postlist.njk" %}
-
 </section>

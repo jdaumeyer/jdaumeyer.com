@@ -1,0 +1,36 @@
+{% js %}
+async function getLastPlayedSong() {
+    const user = "octothorpe_";
+    const url = `https://lastfm-last-played.biancarosa.com.br/${user}/latest-song`;
+
+    const response = await fetch(url);
+
+    try {
+        if (!response.ok) {
+            throw new Error(`Response status: ${response.status}`);
+        }
+        return await response.json();
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+getLastPlayedSong().then(res => {
+    const song = res.track;
+
+    document.querySelector("#last-fm-song-name").innerText = song.name;
+<!-- document.querySelector("#last-fm-album-name").innerText = "on "+ song.album["#text"]; -->
+    document.querySelector("#last-fm-artist-name").innerText = "By " + song.artist["#text"];
+    document.querySelector("#last-fm-link").href = song.url;
+});
+
+{% endjs %}
+
+<a id="last-fm-link" class="card">
+    <h2> Last song played </h2>
+    <p>
+    <span id="last-fm-song-name"> Fetching... </span>
+    <span id="last-fm-artist-name"> </span>
+    <!-- <em><span id="last-fm-album-name"> </span></em> -->
+    </p>
+</a>

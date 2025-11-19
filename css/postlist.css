@@ -8,21 +8,29 @@
     border-bottom: 2px solid var(--dark-accent, white);
 }
 
-.postlink h4 {
-    margin: 0;
-    font-weight: 400;
-}
 
 
 .postlist {
     list-style: none;
     padding: 0;
     --postlist-hover-transition-length: 300ms;
+a:after {
+    color: var(--background-color);
+    content: "→";
+    transition: 200ms;
+    border: none;
+}
+
+
 }
 
 .postlink:has(a:hover) {
-    margin-left: 1em;
-    margin-right: 1em;
+    margin-left: calc(var(--spacing)/4);
+    margin-right: calc(var(--spacing)/4);
+
+    a:after {
+        color: var(--text-color);
+    }
     /* transform: scaleX(0.9); */
 }
 

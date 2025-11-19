@@ -65,6 +65,16 @@ h2 {
 }
 
 
+#about {
+    display: flex;
+    flex-flow: row-reverse wrap;
+    div {
+        float: left;
+    }
+    img {
+        height: 15rem;
+    }
+}
 
 
 nav > ul {
@@ -85,6 +95,30 @@ a {
     border-bottom: 2px dotted;
     transition: 200ms;
     color: var(--text-color);
+}
+
+details {
+    /* transform: scale(0); */
+& summary {
+    border: 2px solid var(--dark-accent);
+    width: min-content;
+    padding: calc(var(--spacing)/4);
+    border-radius: 15px;
+    font-weight: 800;
+    transform: scale(1);
+}
+transition: 200ms transform;
+border: 0px solid var(--dark-accent);
+    border-radius: 15px;
+}
+
+details[open] {
+    border: 2px solid var(--dark-accent);
+    transform: scale(1);
+
+    & summary {
+        border: none;
+    }
 }
 
 a:hover {
@@ -123,7 +157,7 @@ a:hover {
 }
 
 .stack > * + * {
-    margin-block-start: var(--space, 1.5rem);
+    margin-block-start: var(--spacing, 1.5rem);
 }
 
 
