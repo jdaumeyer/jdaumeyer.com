@@ -1,4 +1,4 @@
-<style>{% include "css/postlist.css" %}</style>
+<!-- begin postlist.njk -->
 <ol id="postlist" class="postlist stack h-feed">
     {%- for post in collections.posts -%}
         <li class="postlink h-entry">
@@ -7,3 +7,44 @@
         </li>
     {%- endfor -%}
 </ol>
+<!-- end postlist.njk -->
+
+<!-- <style>{% include "css/postlist.css" %}</style> -->
+<style>
+.postlink {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: var(--postlist-hover-transition-length);
+    padding: calc(var(--spacing) / 4) 0em;
+    position: relative;
+    border-bottom: 2px solid var(--dark-accent, white);
+}
+
+.postlist {
+    list-style: none;
+    padding: 0;
+    --postlist-hover-transition-length: 300ms;
+
+    a:after {
+        color: var(--background-color);
+        content: "→";
+        transition: 200ms;
+        border: none;
+    }
+}
+
+.postlink:has(a:hover) {
+    margin-left: calc(var(--spacing)/4);
+    margin-right: calc(var(--spacing)/4);
+
+    a:after {
+        color: var(--text-color);
+    }
+}
+
+.postlink:after {
+    opacity: 0;
+    transition: var(--postlist-hover-transition-length);
+}
+</style>
