@@ -67,12 +67,13 @@ h2 {
 
 #about {
     display: flex;
-    flex-flow: row-reverse wrap;
+    flex-flow: row wrap;
     div {
-        float: left;
+        flex: 1 1 calc(100% - 15rem);
     }
     img {
-        height: 15rem;
+        width: 15rem;
+        flex-basis: 0 0 15rem;
     }
 }
 
@@ -97,19 +98,29 @@ a {
     color: var(--text-color);
 }
 
+.uses-container {
+    display: flex;
+    flex-flow: row wrap;
+    gap: var(--spacing);
+    width: 100%;
+    justify-content: space-between;
+}
 details {
     /* transform: scale(0); */
 & summary {
+    cursor: pointer;
     border: 2px solid var(--dark-accent);
     width: min-content;
     padding: calc(var(--spacing)/4);
     border-radius: 15px;
     font-weight: 800;
-    transform: scale(1);
 }
-transition: 200ms transform;
-border: 0px solid var(--dark-accent);
+/* transition: 200ms; */
+/* transform-property: transform; */
+border: 2px solid #ffffff00;
     border-radius: 15px;
+    /* width: 40%; */
+    flex: 1 0;
 }
 
 details[open] {
