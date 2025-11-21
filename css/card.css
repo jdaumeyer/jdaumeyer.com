@@ -1,6 +1,6 @@
 .card-holder {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     flex-flow: row wrap;
     gap: var(--spacing, 1.5rem);
 }
@@ -32,6 +32,13 @@
         margin: 0;
         font-size: 1.1rem;
     }
+}
+
+.social-links {
+    display: flex;
+    padding: 0.15rem;
+    list-style: none;
+    flex-flow: row nowrap;
 }
 
 a.card {

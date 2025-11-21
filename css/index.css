@@ -105,6 +105,14 @@ a {
     width: 100%;
     justify-content: space-between;
 }
+
+.social-links {
+    display: flex;
+    flex-flow: row nowrap;
+    padding: 0;
+    list-style: none;
+    gap: 1rem;
+}
 details {
     /* transform: scale(0); */
 & summary {
