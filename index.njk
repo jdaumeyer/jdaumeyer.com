@@ -6,31 +6,39 @@ title: home
 
 <section id="about">
     <div class="stack">
-    <style>{% include "css/animations/slide-in-from-bottom.css" %} </style>
-    <h1 class="slide-in-from-bottom"> Hi, I'm <a class="h-card" href="{{metadata.url}}"> {{ metadata.author.name }}</a>! </h1>
-    <ul class="social-links">
-        <li><a href="https://www.linkedin.com/in/jacklyn-daumeyer/">
-            <i class="fa fa-linkedin"></i>
-            /in/jacklyn-daumeyer
-        </a></li>
-        <li><a href="mailto:daumeyer.11@osu.edu">
-            <i class="fa fa-envelope"></i>
-            daumeyer.11@osu.edu
-        </a></li>
-        <li><a href="https://en.wikipedia.org/wiki/Ohio">
-            <i class="fa fa-map-pin"></i>
-            Ohio
-        </a></li>
-    </ul>
-    <p>
-        An aspiring front end web developer. Currently studying Human Computer Interaction and Computer Science at the Ohio State University.
-    </p>
+        <style>{% include "css/animations/slide-in-from-bottom.css" %} </style>
+        <h1 class="slide-in-from-bottom"> Hi, I'm <a class="h-card" href="{{metadata.url}}"> {{ metadata.author.name }}</a>! </h1>
+        <ul class="social-links">
+            <li><a href="https://www.linkedin.com/in/jacklyn-daumeyer/">
+                <i class="fa fa-linkedin"></i>
+                /in/jacklyn-daumeyer
+            </a></li>
+            <li><a href="mailto:daumeyer.11@osu.edu">
+                <i class="fa fa-envelope"></i>
+                daumeyer.11@osu.edu
+            </a></li>
+            <li><a href="https://en.wikipedia.org/wiki/Ohio">
+                <i class="fa fa-map-pin"></i>
+                Ohio
+            </a></li>
+        </ul>
+        <p>
+            An aspiring front end web developer. Currently studying Human Computer Interaction and Computer Science at the Ohio State University.
+        </p>
+
+        <style>{% include "css/card.css" %}</style>
+        <div class="card-holder">
+            <a href="jdaumeyer-resume.pdf" class="card">
+                <h2><i class="fa fa-file"></i>&nbsp;&nbsp;  Check out my Résumé </h2>
+            </a>
+        </div>
     </div>
-    <img src="img/jackie.png"></img>
+    <img src="img/jackie-color.jpg"></img>
 </section>
+
 
 <section id="bloglist">
     <style>{% include "css/bloglist.css" %}</style>
-    <h1><a href="/blog/"> My Work </a><span class="material-symbols-outlined">arrow_outward</span></h1>
+    <h1> My Work </h1>
   {% include "postlist.njk" %}
 </section>

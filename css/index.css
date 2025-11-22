@@ -26,9 +26,17 @@ body {
 
 }
 
-/* main { */
-/*     margin: 0 auto; */
-/* } */
+main {
+    margin: 7em auto;
+}
+
+.card {
+    width: max-content;
+}
+
+img {
+    width: 100%;
+}
 
 header {
     margin: 2em 0;
@@ -68,12 +76,15 @@ h2 {
 #about {
     display: flex;
     flex-flow: row wrap;
+    gap: 1em;
     div {
-        flex: 1 1 calc(100% - 15rem);
+        flex: 1 1 calc(100% - 18rem);
     }
     img {
         width: 15rem;
+        height: 15rem;
         flex-basis: 0 0 15rem;
+        border-radius: 15px;
     }
 }
 

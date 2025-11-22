@@ -21,6 +21,7 @@ export default function(eleventyConfig) {
 	});
 
     eleventyConfig.addPassthroughCopy("**/*.png");
+    eleventyConfig.addPassthroughCopy("**/*.jpg");
 
 	// eleventyConfig.addPlugin(pluginWebc, {
     //     components: "_components/**/*.webc",
