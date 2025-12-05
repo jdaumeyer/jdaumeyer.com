@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap');
-* {
+:root {
 
     /* Colorscheme */
     color-scheme: light dark;
@@ -9,6 +9,7 @@
     /* --dark-accent: light-dark(#ca9ee6, #ea76cb); */
     --spacing: 2rem;
     sizing: border-box;
+}
 
 body {
     margin: 0 auto;
