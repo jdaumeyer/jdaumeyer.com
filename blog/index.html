@@ -271,27 +271,73 @@ a:hover {
 .slide-in-from-left {
     animation: 500ms ease-in-out slide-in-from-left;
 }
-/* Blog page css */
-article {
-    /* display: grid; */
-    /* grid-template-columns: 1fr; */
-}
-
-article p {
-    /* width: 65ch; */
-}
-
-
-aside {
-    background-color: var(--light-accent);
-    padding: var(--spacing);
-}
-
-.article-meta {
+#bloglist {
     display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    gap: 1ch;
+    justify-content: space-between;
+}
+
+#bloglist h1 {
+    flex-basis: 100%;
+}
+
+.postlist {
+    flex-grow: 1;
+}
+
+.taglist-wrapper {
+    flex: 1 0 20ch;
+
+
+}
+
+.taglist {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 0.5em;
+
+
     list-style: none;
-    gap: var(--spacing);
     padding: 0;
+}
+.postlink {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: var(--postlist-hover-transition-length);
+    padding: calc(var(--spacing) / 4) 0em;
+    position: relative;
+    border-bottom: 2px solid var(--dark-accent, white);
+}
+
+.postlist {
+    list-style: none;
+    padding: 0;
+    --postlist-hover-transition-length: 300ms;
+
+    a:after {
+        color: var(--background-color);
+        content: "→";
+        transition: 200ms;
+        border: none;
+    }
+}
+
+.postlink:has(a:hover) {
+    margin-left: calc(var(--spacing)/4);
+    margin-right: calc(var(--spacing)/4);
+
+    a:after {
+        color: var(--text-color);
+    }
+}
+
+.postlink:after {
+    opacity: 0;
+    transition: var(--postlist-hover-transition-length);
 }</style>
   <script></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -316,7 +362,7 @@ aside {
         <li>
           
           
-              <a href="/blog/"> /blog </a>
+              <span class="current"> /blog </span>
           
         </li>
         
@@ -333,34 +379,32 @@ aside {
 
   <main id="main" class="stack">
     
-<article class="stack h-entry">
-<h1 class="p-name"> This is my second post with a much longer title. </h1>
-<ul class="article-meta">
-    <li class="article-publish-time chip"><time class="dt-published" datetime="Tue Jul 03 2018 20:00:00 GMT-0400 (Eastern Daylight Time)"> 2018-07-04</time></li>
+<section id="bloglist">
+    
+<h1> Jackie's Blog </h1>
+<div class="taglist-wrapper">
+    <h2> Tags </h2>
+    <ul class="taglist">
     
         
-        <li class="article-tag chip"><a href="/tags/number-2/">number 2</a></li>
+        <li class="chip"><a href="/tags/number-2/" class="post-tag">number 2</a></li>
     
-</ul>
-<content class="p-content">
-<p>This is a post</p>
-<p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p>
-<p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p>
-<h2>Heading</h2>
-<p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p>
-<aside> This is an aside </aside>
-<p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p>
-<p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
-Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p>
-<h3>Cool Stuff</h3>
-<p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p>
-<p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p>
-<p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p>
-<h2>Hello</h2>
-<p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p>
+    </ul>
+</div>
 
-</content>
-</article>
+<!-- begin postlist.njk -->
+<ol id="postlist" class="postlist stack h-feed"><li class="postlink h-entry">
+            <a class="u-url" href="/posts/test-post/"> This is my second post with a much longer title. </a>
+            <time class="dt-published" datetime="Tue Jul 03 2018 20:00:00 GMT-0400 (Eastern Daylight Time)"> 2018-07-04 </time>
+        </li><li class="postlink h-entry">
+            <a class="u-url" href="/posts/testpost2/"> Post 2. </a>
+            <time class="dt-published" datetime="Tue Jul 03 2018 20:00:00 GMT-0400 (Eastern Daylight Time)"> 2018-07-04 </time>
+        </li></ol>
+<!-- end postlist.njk -->
+
+
+
+</section>
 
   </main>
 
