@@ -7,6 +7,7 @@
   
   
   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <style>@import url('https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap');
 * {
 
@@ -35,9 +36,17 @@ body {
 
 }
 
-/* main { */
-/*     margin: 0 auto; */
-/* } */
+main {
+    margin: 7em auto;
+}
+
+.card {
+    width: max-content;
+}
+
+img {
+    width: 100%;
+}
 
 header {
     margin: 2em 0;
@@ -77,12 +86,15 @@ h2 {
 #about {
     display: flex;
     flex-flow: row wrap;
+    gap: 1em;
     div {
-        flex: 1 1 calc(100% - 15rem);
+        flex: 1 1 calc(100% - 18rem);
     }
     img {
         width: 15rem;
+        height: 15rem;
         flex-basis: 0 0 15rem;
+        border-radius: 15px;
     }
 }
 
@@ -113,6 +125,14 @@ a {
     gap: var(--spacing);
     width: 100%;
     justify-content: space-between;
+}
+
+.social-links {
+    display: flex;
+    flex-flow: row nowrap;
+    padding: 0;
+    list-style: none;
+    gap: 1rem;
 }
 details {
     /* transform: scale(0); */
@@ -347,59 +367,14 @@ a:hover {
 
 <body>
   <a href="#main" id="skip-link" class="visually-hidden">Skip to main content</a>
-  <header>
-    <span class="slide-in-from-left"> jdaumeyer.com </span>
-    <nav class="slide-in-from-right">
-      <ul>
-        
-        <li>
-          
-          
-              <a href="/about/"> /about </a>
-          
-        </li>
-        
-        <li>
-          
-          
-              <span class="current"> /blog </span>
-          
-        </li>
-        
-        <li>
-          
-          
-              <a href="/"> /home </a>
-          
-        </li>
-        
-      </ul>
-    </nav>
-  </header>
 
   <main id="main" class="stack">
     
 <section id="bloglist">
     
-<h1> Jackie's Blog </h1>
-<div class="taglist-wrapper">
-    <h2> Tags </h2>
-    <ul class="taglist">
-    
-        
-        <li class="chip"><a href="/tags/number-2/" class="post-tag">number 2</a></li>
-    
-    </ul>
-</div>
-
+<h1> Portfolio </h1>
 <!-- begin postlist.njk -->
-<ol id="postlist" class="postlist stack h-feed"><li class="postlink h-entry">
-            <a class="u-url" href="/posts/test-post/"> This is my second post with a much longer title. </a>
-            <time class="dt-published" datetime="Tue Jul 03 2018 20:00:00 GMT-0400 (Eastern Daylight Time)"> 2018-07-04 </time>
-        </li><li class="postlink h-entry">
-            <a class="u-url" href="/posts/testpost2/"> Post 2. </a>
-            <time class="dt-published" datetime="Tue Jul 03 2018 20:00:00 GMT-0400 (Eastern Daylight Time)"> 2018-07-04 </time>
-        </li></ol>
+<ol reverse="" id="postlist" class="postlist stack h-feed"></ol>
 <!-- end postlist.njk -->
 
 
@@ -408,7 +383,7 @@ a:hover {
 
   </main>
 
-  <footer>
+  <!-- <footer>
     <div class="colophone">
         <em> Built using <a href="https://www.11ty.dev/">Eleventy v3.1.2 </a></em>.
         <em> Hosted with <a href="https://codeberg.org/"> Codeberg Pages </a>.</em>
@@ -429,6 +404,6 @@ a:hover {
         </ul>
     </nav>
 </footer>
-
+ -->
 </body>
 </html>

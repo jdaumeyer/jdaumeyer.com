@@ -7,6 +7,7 @@
   
   
   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <style>@import url('https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap');
 * {
 
@@ -35,9 +36,17 @@ body {
 
 }
 
-/* main { */
-/*     margin: 0 auto; */
-/* } */
+main {
+    margin: 7em auto;
+}
+
+.card {
+    width: max-content;
+}
+
+img {
+    width: 100%;
+}
 
 header {
     margin: 2em 0;
@@ -77,12 +86,15 @@ h2 {
 #about {
     display: flex;
     flex-flow: row wrap;
+    gap: 1em;
     div {
-        flex: 1 1 calc(100% - 15rem);
+        flex: 1 1 calc(100% - 18rem);
     }
     img {
         width: 15rem;
+        height: 15rem;
         flex-basis: 0 0 15rem;
+        border-radius: 15px;
     }
 }
 
@@ -113,6 +125,14 @@ a {
     gap: var(--spacing);
     width: 100%;
     justify-content: space-between;
+}
+
+.social-links {
+    display: flex;
+    flex-flow: row nowrap;
+    padding: 0;
+    list-style: none;
+    gap: 1rem;
 }
 details {
     /* transform: scale(0); */
@@ -279,35 +299,6 @@ a:hover {
 
 <body>
   <a href="#main" id="skip-link" class="visually-hidden">Skip to main content</a>
-  <header>
-    <span class="slide-in-from-left"> jdaumeyer.com </span>
-    <nav class="slide-in-from-right">
-      <ul>
-        
-        <li>
-          
-          
-              <span class="current"> /about </span>
-          
-        </li>
-        
-        <li>
-          
-          
-              <a href="/blog/"> /blog </a>
-          
-        </li>
-        
-        <li>
-          
-          
-              <a href="/"> /home </a>
-          
-        </li>
-        
-      </ul>
-    </nav>
-  </header>
 
   <main id="main" class="stack">
     
@@ -365,7 +356,7 @@ a:hover {
 
   </main>
 
-  <footer>
+  <!-- <footer>
     <div class="colophone">
         <em> Built using <a href="https://www.11ty.dev/">Eleventy v3.1.2 </a></em>.
         <em> Hosted with <a href="https://codeberg.org/"> Codeberg Pages </a>.</em>
@@ -386,6 +377,6 @@ a:hover {
         </ul>
     </nav>
 </footer>
-
+ -->
 </body>
 </html>

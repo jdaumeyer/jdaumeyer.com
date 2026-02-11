@@ -7,6 +7,7 @@
   
   
   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <style>@import url('https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap');
 * {
 
@@ -35,9 +36,17 @@ body {
 
 }
 
-/* main { */
-/*     margin: 0 auto; */
-/* } */
+main {
+    margin: 7em auto;
+}
+
+.card {
+    width: max-content;
+}
+
+img {
+    width: 100%;
+}
 
 header {
     margin: 2em 0;
@@ -77,12 +86,15 @@ h2 {
 #about {
     display: flex;
     flex-flow: row wrap;
+    gap: 1em;
     div {
-        flex: 1 1 calc(100% - 15rem);
+        flex: 1 1 calc(100% - 18rem);
     }
     img {
         width: 15rem;
+        height: 15rem;
         flex-basis: 0 0 15rem;
+        border-radius: 15px;
     }
 }
 
@@ -113,6 +125,14 @@ a {
     gap: var(--spacing);
     width: 100%;
     justify-content: space-between;
+}
+
+.social-links {
+    display: flex;
+    flex-flow: row nowrap;
+    padding: 0;
+    list-style: none;
+    gap: 1rem;
 }
 details {
     /* transform: scale(0); */
@@ -273,7 +293,7 @@ a:hover {
 }
 .card-holder {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     flex-flow: row wrap;
     gap: var(--spacing, 1.5rem);
 }
@@ -305,6 +325,13 @@ a:hover {
         margin: 0;
         font-size: 1.1rem;
     }
+}
+
+.social-links {
+    display: flex;
+    padding: 0.15rem;
+    list-style: none;
+    flex-flow: row nowrap;
 }
 
 a.card {
@@ -386,30 +413,7 @@ a.card {
     opacity: 0;
     transition: var(--postlist-hover-transition-length);
 }</style>
-  <script>async function getLastPlayedSong() {
-     const user = "octothorpe_";
-     const url = `https://lastfm-last-played.biancarosa.com.br/${user}/latest-song`;
-
-     const response = await fetch(url);
-
-     try {
-         if (!response.ok) {
-             throw new Error(`Response status: ${response.status}`);
-         }
-         return await response.json();
-     } catch (error) {
-         console.log(error);
-     }
- }
-
- getLastPlayedSong().then(res => {
-     const song = res.track;
-
-     document.querySelector("#last-fm-song-name").innerText = song.name;
-     // document.querySelector("#last-fm-album-name").innerText = "on "+ song.album["#text"];
-     document.querySelector("#last-fm-artist-name").innerText = "By " + song.artist["#text"];
-     document.querySelector("#last-fm-link").href = song.url;
- });</script>
+  <script></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,200&icon_names=arrow_outward,mail,rss_feed">
 <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=mail" /> -->
@@ -417,105 +421,47 @@ a.card {
 
 <body>
   <a href="#main" id="skip-link" class="visually-hidden">Skip to main content</a>
-  <header>
-    <span class="slide-in-from-left"> jdaumeyer.com </span>
-    <nav class="slide-in-from-right">
-      <ul>
-        
-        <li>
-          
-          
-              <a href="/about/"> /about </a>
-          
-        </li>
-        
-        <li>
-          
-          
-              <a href="/blog/"> /blog </a>
-          
-        </li>
-        
-        <li>
-          
-          
-              <span class="current"> /home </span>
-          
-        </li>
-        
-      </ul>
-    </nav>
-  </header>
 
   <main id="main" class="stack">
     
 <section id="about">
     <div class="stack">
-    
-    <h1 class="slide-in-from-bottom"> Hi, I'm <a class="h-card" href="https://jdaumeyer.com/"> Jackie Daumeyer</a>! </h1>
-    <p>
-        I'm a Computer Information Sciences and Human Computer Interaction graduate of the Ohio State University.
-        I enjoy reading, cooking, and playing games. And I live in Ohio.
-    </p>
-    <p>
-        This website houses my writing, projects, and documents my life.
-    </p>
+        
+        <h1 class="slide-in-from-bottom"> Hi, I'm <a class="h-card" href="https://jdaumeyer.com/"> Jackie Daumeyer</a>! </h1>
+        <ul class="social-links">
+            <li><a href="https://www.linkedin.com/in/jacklyn-daumeyer/">
+                <i class="fa fa-linkedin"></i>
+                /in/jacklyn-daumeyer
+            </a></li>
+            <li><a href="mailto:daumeyer.11@osu.edu">
+                <i class="fa fa-envelope"></i>
+                daumeyer.11@osu.edu
+            </a></li>
+            <li><a href="https://en.wikipedia.org/wiki/Ohio">
+                <i class="fa fa-map-pin"></i>
+                Ohio
+            </a></li>
+        </ul>
+        <p>
+            An aspiring front end web developer. Currently studying Human Computer Interaction and Computer Science at the Ohio State University.
+        </p>
+
+        
+        <div class="card-holder">
+            <a href="jdaumeyer-resume.pdf" class="card">
+                <h2><i class="fa fa-file"></i>&nbsp;&nbsp;  Check out my Résumé </h2>
+            </a>
+        </div>
     </div>
-    <img src="img/jackie.png">
+    <img src="img/jackie-color.jpg">
 </section>
 
-<section id="cards" class="card-holder">
-    
-    <a class="card" href="/about/#contact">
-        <h2>
-            <!-- <span class="material-symbols-outlined">mail</span> -->
-             Get in touch
-        </h2>
-        <p> See all the other places that you can find me on the internet. </p>
-    </a>
-    <a class="card" href="/blog/#follow">
-        <h2>
-            <!-- <span class="material-symbols-outlined">rss_feed</span> -->
-             Follow
-        </h2>
-        <p> Get updates on all my new blog posts with RSS. </p>
-    </a>
-    
-
-<!-- begin lastfm.njk -->
-<a id="last-fm-link" class="card">
-    <h2> Last played song </h2>
-    <p>
-    <span id="last-fm-song-name"> Fetching... </span>
-    <span id="last-fm-artist-name"> </span>
-    <!-- <em><span id="last-fm-album-name"> </span></em> -->
-    </p>
-</a>
-<!-- end lastfm.njk -->
-
-</section>
 
 <section id="bloglist">
     
-    <h1><a href="/blog/"> Blog </a><span class="material-symbols-outlined">arrow_outward</span></h1>
-  <div class="taglist-wrapper">
-    <h2> Tags </h2>
-    <ul class="taglist">
-    
-        
-        <li class="chip"><a href="/tags/number-2/" class="post-tag">number 2</a></li>
-    
-    </ul>
-</div>
-
+    <h1> My Work </h1>
   <!-- begin postlist.njk -->
-<ol id="postlist" class="postlist stack h-feed"><li class="postlink h-entry">
-            <a class="u-url" href="/posts/test-post/"> This is my second post with a much longer title. </a>
-            <time class="dt-published" datetime="Tue Jul 03 2018 20:00:00 GMT-0400 (Eastern Daylight Time)"> 2018-07-04 </time>
-        </li><li class="postlink h-entry">
-            <a class="u-url" href="/posts/testpost2/"> Post 2. </a>
-            <time class="dt-published" datetime="Tue Jul 03 2018 20:00:00 GMT-0400 (Eastern Daylight Time)"> 2018-07-04 </time>
-        </li></ol>
+<ol reverse="" id="postlist" class="postlist stack h-feed"></ol>
 <!-- end postlist.njk -->
 
 
@@ -524,7 +470,7 @@ a.card {
 
   </main>
 
-  <footer>
+  <!-- <footer>
     <div class="colophone">
         <em> Built using <a href="https://www.11ty.dev/">Eleventy v3.1.2 </a></em>.
         <em> Hosted with <a href="https://codeberg.org/"> Codeberg Pages </a>.</em>
@@ -545,6 +491,6 @@ a.card {
         </ul>
     </nav>
 </footer>
-
+ -->
 </body>
 </html>
