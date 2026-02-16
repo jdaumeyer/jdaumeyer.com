@@ -9,6 +9,7 @@
     /* --dark-accent: light-dark(#ca9ee6, #ea76cb); */
     --spacing: 2rem;
     sizing: border-box;
+}
 
 body {
     margin: 0 auto;

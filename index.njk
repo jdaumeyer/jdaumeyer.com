@@ -9,13 +9,13 @@ title: home
         <style>{% include "css/animations/slide-in-from-bottom.css" %} </style>
         <h1 class="slide-in-from-bottom"> Hi, I'm <a class="h-card" href="{{metadata.url}}"> {{ metadata.author.name }}</a>! </h1>
         <ul class="social-links">
-            <li><a href="https://www.linkedin.com/in/jacklyn-daumeyer/">
+            <!--<li><a href="https://www.linkedin.com/in/jacklyn-daumeyer/">
                 <i class="fa fa-linkedin"></i>
                 /in/jacklyn-daumeyer
-            </a></li>
-            <li><a href="mailto:daumeyer.11@osu.edu">
+            </a></li>-->
+            <li><a href="mailto:mail@jdaumeyer.com">
                 <i class="fa fa-envelope"></i>
-                daumeyer.11@osu.edu
+                mail@jdaumeyer.com
             </a></li>
             <li><a href="https://en.wikipedia.org/wiki/Ohio">
                 <i class="fa fa-map-pin"></i>
@@ -41,4 +41,41 @@ title: home
     <style>{% include "css/bloglist.css" %}</style>
     <h1> My Work </h1>
   {% include "postlist.njk" %}
+</section>
+
+<script>
+ async function getLastPlayedSong() {
+     const user = "octothorpe_";
+     const url = `https://lastfm-last-played.biancarosa.com.br/${user}/latest-song`;
+
+     const response = await fetch(url);
+
+     try {
+         if (!response.ok) {
+             throw new Error(`Response status: ${response.status}`);
+         }
+         return await response.json();
+     } catch (error) {
+         console.log(error);
+     }
+ }
+
+ getLastPlayedSong().then(res => {
+     const song = res.track;
+
+     document.querySelector("#last-fm-song-name").innerText = song.name;
+     // document.querySelector("#last-fm-album-name").innerText = "on "+ song.album["#text"];
+     document.querySelector("#last-fm-artist-name").innerText = "By " + song.artist["#text"];
+     document.querySelector("#last-fm-link").href = song.url;
+ });
+</script>
+
+
+<section id="funfacts">
+<h1> Fun Facts </h1>
+<ul>
+<li> I was programming lead of a worlds semi-finalist FTC robotics team </li>
+<li> The last song I listened to was <a id="last-fm-link"><span id="last-fm-song-name"> Fetching... </span> <span id="last-fm-artist-name"></span></li>
+<li> My favorite book of all time is <em> The Left Hand of Darkness </em> by Ursula K. Le Guin</li>
+</ul>
 </section>
