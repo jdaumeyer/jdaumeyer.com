@@ -2,22 +2,34 @@
 
 <html>
 <head>
-  <title> {{ title or metadata.title }} </title>
+  <title> {{ metadata.title }} </title>
 
   <style>{% include "css/index.css" %}</style>
+  <style>{% include "css/colors/monochrome.css" %}</style>
+  <style>{% include "css/animations/slide-in-from-bottom.css" %}</style>
   <style>{% getBundle "css" %}</style>
+  <script>{% getBundle "js" %}</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,200&icon_names=arrow_outward,mail,rss_feed" />
+<!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=mail" /> -->
 </head>
 
 <body>
   <a href="#main" id="skip-link" class="visually-hidden">Skip to main content</a>
   <header>
-    <span> {{metadata.title}} </span>
-    <nav>
+    <span class="slide-in-from-left"> {{ metadata.title }} </span>
+    <nav class="slide-in-from-right">
       <ul>
-        <li><a href="/"> /home </a></li>
-        <li><a href="/now"> /now </a></li>
-        <li><a href="/resume"> /resumé </a></li>
-        <li><a href="/feed"> /follow </a></li>
+        {% for navItem in collections.nav %}
+        <li>
+          {{navItem.data.url}}
+          {% if page.url == navItem.url %}
+              <span class="current"> /{{navItem.data.title}} </span>
+          {% else %}
+              <a href="{{navItem.url}}"> /{{navItem.data.title}} </a>
+          {% endif %}
+        </li>
+        {% endfor %}
       </ul>
     </nav>
   </header>
@@ -25,5 +37,7 @@
   <main id="main" class="stack">
     {{ content | safe }}
   </main>
+
+  {% include "footer.njk" %}
 </body>
 </html>

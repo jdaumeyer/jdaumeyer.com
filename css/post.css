@@ -1,0 +1,22 @@
+/* Blog page css */
+article {
+    /* display: grid; */
+    /* grid-template-columns: 1fr; */
+}
+
+article p {
+    /* width: 65ch; */
+}
+
+
+aside {
+    background-color: var(--light-accent);
+    padding: var(--spacing);
+}
+
+.article-meta {
+    display: flex;
+    list-style: none;
+    gap: var(--spacing);
+    padding: 0;
+}

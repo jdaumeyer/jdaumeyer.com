@@ -1,0 +1,10 @@
+{% css %}
+
+{% endcss %}
+
+{% macro card(title, description, link) %}
+<a class="card" href="{{ link }}">
+    <h2>{{ title | safe}}</h2>
+    <p>{{ description | safe }}</p>
+</a>
+{% endmacro %}

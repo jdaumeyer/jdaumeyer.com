@@ -1,0 +1,7 @@
+* {
+    color-scheme: light dark;
+    --background-color: light-dark(#fff, #000);
+    --text-color: light-dark(#000, #fff);
+    --light-accent: light-dark(#eee, #111);
+    --dark-accent: light-dark(#ddd, #333);
+}
