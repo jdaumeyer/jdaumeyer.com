@@ -1,6 +1,5 @@
 #bloglist {
     display: flex;
-    flex-direction: row-reverse;
     flex-wrap: wrap;
     gap: 1ch;
     justify-content: space-between;
@@ -15,7 +14,7 @@
 }
 
 .taglist-wrapper {
-    width: 20ch;
+    min-width: 20ch;
 }
 
 .taglist {
