@@ -14,14 +14,13 @@
     list-style: none;
     padding: 0;
     --postlist-hover-transition-length: 300ms;
-a:after {
-    color: var(--background-color);
-    content: "→";
-    transition: 200ms;
-    border: none;
-}
 
-
+    a:after {
+	color: var(--background-color);
+	content: "→";
+	transition: 200ms;
+	border: none;
+    }
 }
 
 .postlink:has(a:hover) {
