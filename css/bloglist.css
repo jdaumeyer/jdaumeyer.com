@@ -6,13 +6,9 @@
     justify-content: space-between;
 }
 
-#bloglist ol {
-
-}
-
-#bloglist h1 {
-    flex-basis: 100%;
-}
+#bloglist h1 { 
+     flex-basis: 100%; 
+} 
 
 .postlist {
     flex-grow: 1;
