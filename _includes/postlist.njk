@@ -11,6 +11,14 @@
 
 <style>
  /* begin postlist.njk */
+ .postlist {
+     --spacing: 0.5rem;
+     list-style: none;
+     padding: 0;
+     --postlist-hover-transition-length: 300ms;
+
+ }
+
  .postlink {
      /* flex */
      display: flex;
@@ -26,34 +34,24 @@
 	 border-bottom: none;
      }
 
-     &:after {
-	 opacity: 0;
-	 transition: var(--postlist-hover-transition-length);
-     }
- }
-
- .postlist {
-     --spacing: 0.5rem;
-     list-style: none;
-     padding: 0;
-     --postlist-hover-transition-length: 300ms;
-
+     /* Arrow on hover */
      a:after {
 	 color: var(--background-color);
 	 content: "→";
+	 width: 0ch;
 	 transition: 200ms;
 	 border: none;
      }
- }
 
- .postlink:has(a:hover) {
-     margin-left: calc(var(--spacing)/4);
-     margin-right: calc(var(--spacing)/4);
+     &:has(a:hover) {
+	 margin-left: calc(var(--spacing) * 1.5);
+	 margin-right: calc(var(--spacing) * 1.5);
 
-     a:after {
-	 color: var(--text-color);
+	 a:after {
+	     color: var(--text-color);
+	     width: 1ch;
+	 }
      }
  }
-
- /* end postlist.njk */
+/* end postlist.njk */
 </style>
