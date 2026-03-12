@@ -1,23 +1,20 @@
 #bloglist {
     display: flex;
-    flex-direction: row-reverse;
     flex-wrap: wrap;
     gap: 1ch;
     justify-content: space-between;
 }
 
-#bloglist h1 {
-    flex-basis: 100%;
-}
+#bloglist h1 { 
+     flex-basis: 100%; 
+} 
 
 .postlist {
     flex-grow: 1;
 }
 
 .taglist-wrapper {
-    flex: 1 0 20ch;
-
-
+    min-width: 20ch;
 }
 
 .taglist {
@@ -25,7 +22,6 @@
     flex-wrap: wrap;
     align-items: flex-start;
     gap: 0.5em;
-
 
     list-style: none;
     padding: 0;

@@ -10,40 +10,49 @@
 <!-- end postlist.njk -->
 
 <style>
-.postlink {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    transition: var(--postlist-hover-transition-length);
-    padding: calc(var(--spacing) / 4) 0em;
-    position: relative;
-    border-bottom: 2px solid var(--dark-accent, white);
-}
+ /* begin postlist.njk */
+ .postlist {
+     --spacing: 0.5rem;
+     list-style: none;
+     padding: 0;
+     --postlist-hover-transition-length: 300ms;
+ }
 
-.postlist {
-    list-style: none;
-    padding: 0;
-    --postlist-hover-transition-length: 300ms;
+ .postlink {
+     /* flex */
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
 
-    a:after {
-        color: var(--background-color);
-        content: "→";
-        transition: 200ms;
-        border: none;
-    }
-}
+     transition: var(--postlist-hover-transition-length);
+     padding: calc(var(--spacing)) 0em;
+     position: relative;
+     border-bottom: 2px solid var(--dark-accent, white);
 
-.postlink:has(a:hover) {
-    margin-left: calc(var(--spacing)/4);
-    margin-right: calc(var(--spacing)/4);
+     &:last-of-type {
+	 border-bottom: none;
+     }
 
-    a:after {
-        color: var(--text-color);
-    }
-}
+     /* Arrow on hover */
+     a:after {
+	 content: "→";
+	 transition: 200ms;
 
-.postlink:after {
-    opacity: 0;
-    transition: var(--postlist-hover-transition-length);
-}
+	 /* hide arrow when not hovered */ 
+	 display: inline-block; 
+	 color: var(--background-color);
+	 width: 0ch;
+     }
+
+     &:has(a:hover) {
+	 margin-left: calc(var(--spacing));
+	 margin-right: calc(var(--spacing));
+
+	 a:after {
+	     color: var(--text-color);
+	     width: 1ch;
+	 }
+     }
+ }
+/* end postlist.njk */
 </style>
