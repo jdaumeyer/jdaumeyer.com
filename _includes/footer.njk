@@ -1,8 +1,9 @@
+<!-- begin footer.njk -->
 <footer>
     <div class="colophone">
         <em> Built using <a href="https://www.11ty.dev/">{{ eleventy.generator }} </a></em>.
         <em> Hosted with <a href="https://codeberg.org/"> Codeberg Pages </a>.</em>
-            <em> View the <a href="https://codeberg.org/jackie/jdaumeyer">source code</a>.</em>
+        <em> View the <a href="https://codeberg.org/jackie/jdaumeyer">source code</a>.</em>
     </div>
     <nav class="sitemap">
         <ul>
@@ -16,6 +17,31 @@
             </li>
             <li><a href="/contact"> contact </a></li>
             <li><a href="/feed"> feed </a></li>
+            <li><a href="/about"> about </a></li>
         </ul>
     </nav>
 </footer>
+<!-- end footer.njk -->
+
+<style>
+/* begin footer.njk */
+footer {
+    border-top: 2px dashed var(--dark-accent);
+    padding-top: calc(var(--spacing)/2);
+
+    & .colophone {
+        margin-bottom: calc(var(--spacing)/4);
+    }
+
+    & > .sitemap ul {
+        display: flex;
+        justify-content: space-between;
+    } 
+
+    & > .sitemap li > ul {
+        display: flex;
+        flex-direction: column;
+    }
+}
+/* end footer.njk */
+</style>
