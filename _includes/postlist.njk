@@ -16,7 +16,6 @@
      list-style: none;
      padding: 0;
      --postlist-hover-transition-length: 300ms;
-
  }
 
  .postlink {
@@ -36,16 +35,18 @@
 
      /* Arrow on hover */
      a:after {
-	 color: var(--background-color);
 	 content: "→";
-	 width: 0ch;
 	 transition: 200ms;
-	 border: none;
+
+	 /* hide arrow when not hovered */ 
+	 display: inline-block; 
+	 color: var(--background-color);
+	 width: 0ch;
      }
 
      &:has(a:hover) {
-	 margin-left: calc(var(--spacing) * 1.5);
-	 margin-right: calc(var(--spacing) * 1.5);
+	 margin-left: calc(var(--spacing));
+	 margin-right: calc(var(--spacing));
 
 	 a:after {
 	     color: var(--text-color);
