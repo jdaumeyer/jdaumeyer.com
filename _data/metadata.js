@@ -5,7 +5,7 @@ export default {
 	description: "My little space on the web.",
 	author: {
 		name: "Jackie Daumeyer",
-		email: "jacklynnnnnn@proton.me",
+		email: "mail@jdaumeyer.com",
 		url: "https://jdaumeyer.com"
 	}
 }

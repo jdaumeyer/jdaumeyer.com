@@ -7,28 +7,58 @@ title: about
 <article>
     <section>
         <h1> About </h1>
-        <p>
-
-        </p>
+        <ul>
+	    <li>I'm a web developer based in Ohio.</li>
+	    <li>I'm a woman in my 20s.</li>
+	    <li>I love reading and am an avid supporter of my local library.</li>
+	    <li>Playing board games with friends is one of my favorite things to do.</li>
+	    <li>I have been vegan my entire life.</li>
+	    <li>I'm a big fan of alt rock and riot grrrl music.</li>
+        </ul>
     </section>
     <section id="contact">
         <h1> Contact </h1>
 
         <p>
-            If you want to reach out to me directly: feel free to email me at <a href="{{ metadata.author.email }}">{{ metadata.author.email }} </a>. Otherwise, you'll find a list of the various other places I can be found on the web below. The list is short because I have a penchant for deleting social media that I don't use.
+            If you want to reach out to me directly: feel free to email me at
+	    <a href="{{ metadata.author.email }}">{{ metadata.author.email }} </a>.
+	    Otherwise, you'll find a list of the various other places I can be found on the web below.
+	    The list is short because I have a penchant for deleting social media that I don't use.
         </p>
 
         <ul>
-            <li><a href="https://codeberg.org/jackie"><em>jackie</em> on codeberg.org</a>. This is my preferred git host. As such, you'll find most of my personal development and projects hosted here.</li>
-            <li><a href="https://github.com/jdaumeyer"><em>jdaumeyer</em> on github.com</a>. I use github far more sparingly and I haven't really used it in quite some time. But I have not yet found the need to delete the account.</li>
-            <li><a href="https://www.last.fm/user/octothorpe_"><em> octothorpe_ </em> on last.fm</a>. In case you want to bear witness to my awful taste in music.</li>
+            <li>
+		<a href="https://codeberg.org/jackie"><em>jackie</em> on codeberg.org</a>.
+		This is my preferred git host.
+		As such, you'll find most of my personal development and projects hosted here.
+	    </li>
+            <li>
+		<a href="https://github.com/jdaumeyer"><em>jdaumeyer</em> on github.com</a>.
+		I use github far more sparingly and I haven't really used it in quite some time.
+		But I have not yet found the need to delete the account.
+	    </li>
+            <li>
+		<a href="https://www.last.fm/user/octothorpe_"><em> octothorpe_ </em> on last.fm</a>.
+		In case you want to bear witness to my awful taste in music.
+	    </li>
         </ul>
     </section>
+
     <section id="resume">
         <h1> Resume </h1>
+	<p>
+	    I'm currently looking for work. If you're interested in seeing more of my professional experience,
+	    you can find my resume below.
+	</p>
+	<style>{% include "css/card.css" %}</style>
+        <div class="card-holder">
+            <a href="jdaumeyer-resume.pdf" class="card">
+                <h2><i class="fa fa-file"></i>&nbsp;&nbsp;  Check out my Résumé </h2>
+            </a>
+        </div>
     </section>
 
-    <section id="uses" class="stack">
+    <section id="uses">
         <h1> Uses </h1>
 
         <p>
@@ -38,19 +68,35 @@ title: about
             <details>
                 <summary>Software</summary>
                 <ul>
-                    <li>Emacs is my main text editor. Although I am an evil-mode user as well because vim kebindings are second nature to me.</li>
-                    <li>All of my machines run some variation of NixOS.</li>
+                    <li>
+			<b>Emacs</b> is my main text editor.
+			Although I am an evil-mode user since vim kebindings are second nature to me.
+		    </li>
+                    <li>
+			<b>NixOS</b>. All of my machines currently run some variation of NixOS.
+			I've been using linux as my primary operating system since 2019 and there's no chance of that chaning
+			anytime soon.
+			Nix in particular is super nice because it uses a configuration file to setup an entire computer
+			declaratively. The language used in these files, however, could definitely use some work.
+		    </li>
+		    <li>
+			<b>KeepassXC</b>. A password manager is life changing nowadays.
+			I've been using Keepass for quite some time and it has been pretty good.
+			The ability to generate unique passwords for any account I need and not having to remember said
+			password is so releiving.
+		    </li>
                 </ul>
             </details>
 
             <details>
                 <summary>Hardware</summary>
                 <ul>
-                    <li>Lenovo X1 Carbon Gen 5. My current laptop. It still holds up well and I plan to use it for many more years.</li>
+                    <li>
+			Lenovo X1 Carbon Gen 5.
+			My current laptop.
+			It still holds up well and I plan to use it for many more years.
+		    </li>
                 </ul>
-            </details>
-            <details>
-                <summary>Makeup</summary>
             </details>
     </section>
 </article>
