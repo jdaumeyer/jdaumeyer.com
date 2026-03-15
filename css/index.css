@@ -37,25 +37,6 @@ body {
 /*     margin: 0 auto; */
 /* } */
 
-header {
-    margin: 2em 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-}
-
-
-header span {
-    display: none;
-}
-
-@media (min-width: 768px) {
-    header span {
-        display: inline-block !important;
-    }
-}
-
 h1 {
     font-weight: 900;
     font-size: 1.8rem;
@@ -70,27 +51,23 @@ h2 {
 
 #about {
     display: flex;
-    flex-flow: row wrap;
+
+    gap: calc(var(--spacing) / 2);
+
+    flex-flow: column-reverse;
+    @media (min-width: 768px) {
+	flex-flow: row;
+    }
+
     div {
-        flex: 1 1 calc(100% - 15rem);
+        flex: 1 1 content;
     }
+
     img {
-        width: 15rem;
-        flex-basis: 0 0 15rem;
-    }
-}
-
-
-nav > ul {
-    margin: 0;
-    display: flex;
-    flex-direction: row;
-    gap: 1em;
-    list-style: none;
-    padding-left: 0;
-
-    & .current {
-        font-weight: 800;
+        flex: 0 0 content;
+	max-height: 15rem;
+	aspect-ratio: 1 / 1;
+	align-self: center;
     }
 }
 

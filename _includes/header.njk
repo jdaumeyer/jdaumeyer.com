@@ -1,0 +1,60 @@
+<!-- begin header.njk -->
+<header>
+    <span class="slide-in-from-left"> {{ metadata.title }} </span>
+    <nav class="slide-in-from-right">
+      <ul>
+        {% for navItem in collections.nav | reverse %}
+        <li>
+          {{navItem.data.url}}
+          {% if page.url == navItem.url %}
+              <span class="current"> /{{navItem.data.title}} </span>
+          {% else %}
+              <a href="{{navItem.url}}"> /{{navItem.data.title}} </a>
+          {% endif %}
+        </li>
+        {% endfor %}
+      </ul>
+    </nav>
+</header>
+<!-- end header.njk -->
+
+<style>
+ /* begin header.njk */
+ header {
+     margin: 2em 0;
+
+     /* Flex */
+     display: flex;
+     flex-direction: row;
+
+     /* center nav on mobile */
+     justify-content: center;
+     @media (min-width: 768px) {
+	 justify-content: space-between;
+     }
+
+     align-items: center;
+
+
+     & > span:not(.current) { /* hide site name on small displays */
+	 display: none;
+	 @media (min-width: 768px) {
+	     display: inline-block;
+	 }
+     }
+ }
+
+ nav > ul {
+     margin: 0;
+     display: flex;
+     flex-direction: row;
+     gap: 1em;
+     list-style: none;
+     padding-left: 0;
+
+     & .current {
+         font-weight: 800;
+     }
+ }
+ /* end header.njk */
+</style>

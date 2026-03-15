@@ -17,24 +17,7 @@
 
 <body>
   <a href="#main" id="skip-link" class="visually-hidden">Skip to main content</a>
-  <header>
-    <span class="slide-in-from-left"> {{ metadata.title }} </span>
-    <nav class="slide-in-from-right">
-      <ul>
-        {% for navItem in collections.nav %}
-        <li>
-          {{navItem.data.url}}
-          {% if page.url == navItem.url %}
-              <span class="current"> /{{navItem.data.title}} </span>
-          {% else %}
-              <a href="{{navItem.url}}"> /{{navItem.data.title}} </a>
-          {% endif %}
-        </li>
-        {% endfor %}
-      </ul>
-    </nav>
-  </header>
-
+  {% include "header.njk" %}
   <main id="main" class="stack">
     {{ content | safe }}
   </main>
