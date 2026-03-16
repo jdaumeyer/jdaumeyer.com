@@ -10,6 +10,13 @@
 
 }
 
+.postlist {
+    @media (min-width: 768px) {
+	grid-column: 1 / 2;
+	grid-row: 2 / 3;
+    }
+}
+
 .taglist-wrapper {
     min-width: 20ch;
     /* grid-column-start: 2; */
