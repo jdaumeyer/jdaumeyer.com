@@ -44,6 +44,7 @@ title: home
 <section id="bloglist">
     <style>{% include "css/bloglist.css" %}</style>
     <h1><a href="/blog/"> Blog →</a></h1>
+    {% set postlist = collections.posts %}
     {% include "postlist.njk" %}
     {% include "taglist.njk" %}
 </section>

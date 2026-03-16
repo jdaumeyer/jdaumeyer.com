@@ -1,0 +1,27 @@
+---
+layout: "layouts/base.njk"
+pagination:
+  data: collections
+  size: 1
+  alias: tag
+  filter:
+    - home
+    - nav
+    - all
+    - posts
+permalink: /tags/{{ tag }}/
+title: jdaumeyer.com#{{tag}}
+---
+
+<h1>{% tagicon tag %} {{ tag | capitalize }}</h1>
+<p>
+    {% tagdescription tag %}
+</p>
+<p>
+    <a href="/blog/"> Back to full blog →</a>
+</p>
+
+<div>
+{% set postlist = collections[ tag ] %}
+{% include "postlist.njk" %}
+</div>

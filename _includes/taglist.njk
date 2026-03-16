@@ -1,9 +1,13 @@
 <div class="taglist-wrapper">
     <h2> Tags </h2>
     <ul class="taglist">
-    {% for tag in collections | getKeys | filterTagList | alphabetically %}
-        {% set tagUrl %}/tags/{{tag | slugify}}/{% endset %}
-        <li class="chip"><a href="{{ tagUrl }}" class="post-tag">{{ tag }}</a></li>
-    {% endfor %}
+	{% for tag in collections | getKeys | filterTagList | alphabetically %}
+            {% set tagUrl %}/tags/{{tag | slugify}}/{% endset %}
+            <li class="chip">
+		<a href="{{ tagUrl }}" class="post-tag">
+		    {% tagicon tag %} {{ tag }}
+		</a>
+	    </li>
+	{% endfor %}
     </ul>
 </div>
