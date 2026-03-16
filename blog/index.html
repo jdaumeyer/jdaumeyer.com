@@ -7,16 +7,10 @@
   
   
   
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <style>@import url('https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap');
-* {
-
+:root {
     /* Colorscheme */
     color-scheme: light dark;
-    /* --background-color: light-dark(#eff1f5, #1e1e2e); */
-    /* --text-color: light-dark(#4c4f69, #cdd6f4); */
-    /* --light-accent: light-dark(#cba6f7, #ea76cb); */
-    /* --dark-accent: light-dark(#ca9ee6, #ea76cb); */
     --spacing: 2rem;
     sizing: border-box;
 }
@@ -37,44 +31,16 @@ body {
 
 }
 
-main {
-    margin: 7em auto;
-}
-
-.card {
-    width: max-content;
-}
-
-img {
-    width: 100%;
-}
-
-header {
-    margin: 2em 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-}
-
-footer {
-    margin: auto 0 0 0;
-}
-
-
-header span {
-    display: none;
-}
-
-@media (min-width: 768px) {
-    header span {
-        display: inline-block !important;
-    }
+:target {
+    border: 2px solid var(--dark-accent);
+    border-radius: 15px;
+    padding: calc(var(--spacing)/4);
 }
 
 h1 {
     font-weight: 900;
     font-size: 1.8rem;
+    margin: 0;
 }
 
 h2 {
@@ -86,30 +52,23 @@ h2 {
 
 #about {
     display: flex;
-    flex-flow: row wrap;
-    gap: 1em;
+
+    gap: calc(var(--spacing) / 2);
+
+    flex-flow: column-reverse;
+    @media (min-width: 768px) {
+	flex-flow: row;
+    }
+
     div {
-        flex: 1 1 calc(100% - 18rem);
+        flex: 1 1 content;
     }
+
     img {
-        width: 15rem;
-        height: 15rem;
-        flex-basis: 0 0 15rem;
-        border-radius: 15px;
-    }
-}
-
-
-nav > ul {
-    margin: 0;
-    display: flex;
-    flex-direction: row;
-    gap: 1em;
-    list-style: none;
-    padding-left: 0;
-
-    & .current {
-        font-weight: 800;
+        flex: 0 0 content;
+	max-height: 15rem;
+	aspect-ratio: 1 / 1;
+	align-self: center;
     }
 }
 
@@ -128,34 +87,28 @@ a {
     justify-content: space-between;
 }
 
-.social-links {
-    display: flex;
-    flex-flow: row nowrap;
-    padding: 0;
-    list-style: none;
-    gap: 1rem;
-}
 details {
-    /* transform: scale(0); */
-& summary {
-    cursor: pointer;
-    border: 2px solid var(--dark-accent);
-    width: min-content;
-    padding: calc(var(--spacing)/4);
-    border-radius: 15px;
-    font-weight: 800;
-}
-/* transition: 200ms; */
-/* transform-property: transform; */
-border: 2px solid #ffffff00;
+    /* transform-property: transform; */
+    border: 2px solid #ffffff00;
     border-radius: 15px;
     /* width: 40%; */
     flex: 1 0;
+    & summary {
+	cursor: pointer;
+	border: 2px solid var(--dark-accent);
+	width: min-content;
+	padding: calc(var(--spacing)/4);
+	border-radius: 15px;
+	font-weight: 800;
+    }
+
+    &[open] {
+	border: 2px solid var(--dark-accent);
+	/* transform: scale(1); */
+    }
 }
 
 details[open] {
-    border: 2px solid var(--dark-accent);
-    transform: scale(1);
 
     & summary {
         border: none;
@@ -230,7 +183,7 @@ a:hover {
 	/* Ensure it is positioned on top of everything else when it is shown */
 	z-index: 999;
 }
-* {
+:root {
     color-scheme: light dark;
     --background-color: light-dark(#fff, #000);
     --text-color: light-dark(#000, #fff);
@@ -292,90 +245,213 @@ a:hover {
 .slide-in-from-left {
     animation: 500ms ease-in-out slide-in-from-left;
 }
-#bloglist {
-    display: flex;
-    flex-direction: row-reverse;
-    flex-wrap: wrap;
-    gap: 1ch;
-    justify-content: space-between;
-}
+/* begin header.njk */
+ header {
+     margin: 2em 0;
 
-#bloglist h1 {
-    flex-basis: 100%;
+     /* Flex */
+     display: flex;
+     flex-direction: row;
+
+     /* center nav on mobile */
+     justify-content: center;
+     @media (min-width: 768px) {
+	 justify-content: space-between;
+     }
+
+     align-items: center;
+
+
+     & > span:not(.current) { /* hide site name on small displays */
+	 display: none;
+	 @media (min-width: 768px) {
+	     display: inline-block;
+	 }
+     }
+ }
+
+ nav > ul {
+     margin: 0;
+     display: flex;
+     flex-direction: row;
+     gap: 1em;
+     list-style: none;
+     padding-left: 0;
+
+     & .current {
+         font-weight: 800;
+     }
+ }
+ /* end header.njk */
+#bloglist {
+    display: grid;
+    gap: calc(var(--spacing));
+
+    grid-template-rows: 4fr;
+    grid-template-columns: 100%;
+    @media (min-width: 768px) {
+	grid-template-columns: 3fr 1fr;
+    }
+
 }
 
 .postlist {
-    flex-grow: 1;
+    @media (min-width: 768px) {
+	grid-column: 1 / 2;
+	grid-row: 2 / 3;
+    }
 }
 
 .taglist-wrapper {
-    flex: 1 0 20ch;
+    min-width: 20ch;
+    /* grid-column-start: 2; */
+    grid-row: 3 / 4;
+    @media (min-width: 768px) {
+	grid-column: 2 / 3;
+	grid-row: 2 / 3;
+    }
 
+    /* Hide header on mobile to save space */
+    &  h2 {
+	display: none;
+	@media (min-width: 768px) {
+	    display: inline-block;
+	}
+    }
 
-}
+    & > .taglist {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	gap: 0.5em;
 
-.taglist {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    gap: 0.5em;
+	list-style: none;
+	padding: 0;
 
-
-    list-style: none;
-    padding: 0;
-}
-.postlink {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    transition: var(--postlist-hover-transition-length);
-    padding: calc(var(--spacing) / 4) 0em;
-    position: relative;
-    border-bottom: 2px solid var(--dark-accent, white);
-}
-
-.postlist {
-    list-style: none;
-    padding: 0;
-    --postlist-hover-transition-length: 300ms;
-
-    a:after {
-        color: var(--background-color);
-        content: "→";
-        transition: 200ms;
-        border: none;
     }
 }
+/* begin postlist.njk */
+ .postlist {
+     --spacing: 0.5rem;
+     list-style: none;
+     padding: 0;
+     margin: 0;
+     --postlist-hover-transition-length: 300ms;
+ }
 
-.postlink:has(a:hover) {
-    margin-left: calc(var(--spacing)/4);
-    margin-right: calc(var(--spacing)/4);
+ .postlink {
+     /* flex */
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
 
-    a:after {
-        color: var(--text-color);
+     transition: var(--postlist-hover-transition-length);
+     padding: calc(var(--spacing)) 0em;
+     position: relative;
+     border-bottom: 2px solid var(--dark-accent, white);
+
+     &:last-of-type {
+	 border-bottom: none;
+     }
+
+     /* Arrow on hover */
+     a:after {
+	 content: "→";
+	 transition: 200ms;
+
+	 /* hide arrow when not hovered */ 
+	 display: inline-block; 
+	 color: var(--background-color);
+	 width: 0ch;
+     }
+
+     &:has(a:hover) {
+	 margin-left: calc(var(--spacing));
+	 margin-right: calc(var(--spacing));
+
+	 a:after {
+	     color: var(--text-color);
+	     width: 1ch;
+	 }
+     }
+ }
+/* end postlist.njk */
+/* begin footer.njk */
+footer {
+    border-top: 2px dashed var(--dark-accent);
+    padding-top: calc(var(--spacing)/2);
+    margin-top: auto;
+
+    & .colophone {
+        margin-bottom: calc(var(--spacing)/4);
+    }
+
+    & > .sitemap ul {
+        display: flex;
+        justify-content: space-between;
+    } 
+
+    & > .sitemap li > ul {
+        display: flex;
+        flex-direction: column;
     }
 }
-
-.postlink:after {
-    opacity: 0;
-    transition: var(--postlist-hover-transition-length);
-}</style>
+/* end footer.njk */</style>
   <script></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,200&icon_names=arrow_outward,mail,rss_feed">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,200&icon_names=arrow_outward,mail,rss_feed,file">
 <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=mail" /> -->
 </head>
 
 <body>
   <a href="#main" id="skip-link" class="visually-hidden">Skip to main content</a>
+  <!-- begin header.njk -->
+<header>
+    <span class="slide-in-from-left"> jdaumeyer.com </span>
+    <nav class="slide-in-from-right">
+      <ul>
+        
+        <li>
+          
+          
+              <span class="current"> /blog </span>
+          
+        </li>
+        
+        <li>
+          
+          
+              <a href="/"> /home </a>
+          
+        </li>
+        
+        <li>
+          
+          
+              <a href="/about/"> /about </a>
+          
+        </li>
+        
+      </ul>
+    </nav>
+</header>
+<!-- end header.njk -->
+
+
 
   <main id="main" class="stack">
     
+
 <section id="bloglist">
+    <h1> My Blog </h1>
+    <div id="follow">
+	<h2> Follow </h2>
+	<a href="/feed.xml"> View the rss feed →</a>
+    </div>
     
-<h1> Portfolio </h1>
-<!-- begin postlist.njk -->
-<ol reverse="" id="postlist" class="postlist stack h-feed"><li class="postlink h-entry">
+    <!-- begin postlist.njk -->
+<ol id="postlist" class="postlist stack h-feed"><li class="postlink h-entry">
             <a class="u-url" href="/posts/capstone/"> Landlord-Tenant Communication Tool </a>
             <time class="dt-published" datetime="Fri Dec 05 2025 19:00:00 GMT-0500 (Eastern Standard Time)"> 2025-12-06 </time>
         </li><li class="postlink h-entry">
@@ -386,10 +462,50 @@ a:hover {
 
 
 
+    <div class="taglist-wrapper">
+    <h2> Tags </h2>
+    <ul class="taglist">
+	
+            
+            <li class="chip">
+		<a href="/tags/work/" class="post-tag">
+		    <i class="fa fa-briefcase"></i> work
+		</a>
+	    </li>
+	
+    </ul>
+</div>
+
 </section>
 
   </main>
 
-  
+  <!-- begin footer.njk -->
+<footer>
+    <div class="colophone">
+        <em> Built using <a href="https://www.11ty.dev/">Eleventy v3.1.2 </a></em>.
+        <em> Hosted with <a href="https://codeberg.org/"> Codeberg Pages </a>.</em>
+        <em> View the <a href="https://codeberg.org/jackie/jdaumeyer">source code</a>.</em>
+    </div>
+    <nav class="sitemap">
+        <ul>
+            <li>
+                <a href="/blog">blog</a>
+                <ul>
+                    <li><a href="/tagsx"> tagx </a></li>
+                    <li><a href="/tagsy"> tagy </a></li>
+                    <li><a href="/now"> now </a></li>
+                </ul>
+            </li>
+            <li><a href="/about#contact"> contact </a></li>
+            <li><a href="/feed"> feed </a></li>
+            <li><a href="/about"> about </a></li>
+        </ul>
+    </nav>
+</footer>
+<!-- end footer.njk -->
+
+
+
 </body>
 </html>

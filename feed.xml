@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xml:base="https://jdaumeyer.com/" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jackie Daumeyer&#39;s Feed</title>
+    <link>https://jdaumeyer.com/</link>
+    <atom:link href="https://jdaumeyer.com/feed.xml" rel="self" type="application/rss+xml" />
+    <description>Words written by me.</description>
+    <language>en</language>
+    <item>
+      <title>Landlord-Tenant Communication Tool</title>
+      <link>https://jdaumeyer.com/posts/capstone/</link>
+      <description>&lt;p&gt;Developed in collaboration with JusticeTech at the Moritz College of Law, with a cross discipline team. This tool beutifies the language used by tenants when communicating issues to their landlords, in order to prevent angry messages or errors of speech.&lt;/p&gt;
+&lt;p&gt;I was responsible for the frontend design of the app, ensuring that the form flowed nicely and the site was accessible.&lt;/p&gt;
+&lt;div&gt;
+&lt;b&gt;Skills &amp; Tools Used&lt;/b&gt;&lt;ul style=&quot;display:flex;flex: 0 1 row;list-style: none;padding:0;gap: 1em;margin-top:0;&quot;&gt;
+    &lt;li&gt; React &lt;/li&gt;
+    &lt;li&gt; Agile &lt;/li&gt;
+    &lt;li&gt; Git &lt;/li&gt;
+    &lt;li&gt; Typescript &lt;/li&gt;
+    &lt;li&gt; Trello &lt;/li&gt;
+    &lt;li&gt; Figma &lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;a href=&quot;https://github.com/capstone-au2025/project&quot; class=&quot;card&quot;&gt;
+&lt;h2&gt;&lt;i class=&quot;fa fa-github&quot;&gt;&lt;/i&gt;&amp;nbsp;&amp;nbsp;  View on Github&lt;/h2&gt;
+&lt;/a&gt;
+&lt;img src=&quot;https://jdaumeyer.com/img/capstone.png&quot;&gt;</description>
+      <pubDate>Fri, 05 Dec 2025 19:00:00 EST</pubDate>
+      <dc:creator>Jackie Daumeyer</dc:creator>
+      <guid>https://jdaumeyer.com/posts/capstone/</guid>
+    </item>
+    <item>
+      <title>Colony Cats Website Redesign</title>
+      <link>https://jdaumeyer.com/posts/colony-cats/</link>
+      <description>&lt;p&gt;Colony Cats is a Columbus based cage free cat rescue in need of a refresed website.
+I worked with a team to provide a redesign of their website.
+We worked together in Figma to create an interactive mockup which demonstrated our improved functionality.
+To guide our redesign, we created personas of each different type of user to make sure we accomadeted them in the final design.&lt;/p&gt;
+&lt;div&gt;
+&lt;b&gt;Skills &amp; Tools Used&lt;/b&gt;&lt;ul style=&quot;display:flex;flex: 0 1 row;list-style: none;padding:0;gap: 1em;margin-top:0;&quot;&gt;
+&lt;li&gt; Figma &lt;/li&gt;
+&lt;li&gt; Team Collaboration &lt;/li&gt;
+&lt;li&gt; Prototyping &lt;/li&gt;
+&lt;li&gt; UX Interviewing &lt;/li&gt;  
+&lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;card-holder&quot;&gt;
+  &lt;a href=&quot;https://jdaumeyer.com/posts/colony-cats/colony-cats-redesign.fig&quot; class=&quot;card&quot;&gt;
+        &lt;h2&gt;&lt;i class=&quot;fa fa-file&quot;&gt;&lt;/i&gt;&amp;nbsp;&amp;nbsp;  Download the Figma file &lt;/h2&gt;
+    &lt;/a&gt;
+&lt;/div&gt;
+&lt;h2&gt;Home Page&lt;/h2&gt;
+&lt;img src=&quot;https://jdaumeyer.com/img/_PAGE_%20Homepage.png&quot;&gt;
+&lt;h2&gt;Adoption Page&lt;/h2&gt;
+&lt;img src=&quot;https://jdaumeyer.com/img/_PAGE_%20Adoption%201.png&quot;&gt;
+&lt;!-- ![Cat adoption page](../../img/_PAGE_ Adoption 1.png) --&gt;
+&lt;h2&gt;Volunteer Page&lt;/h2&gt;
+&lt;img src=&quot;https://jdaumeyer.com/img/_PAGE_%20Volunteer.png&quot;&gt;
+</description>
+      <pubDate>Sun, 20 Apr 2025 20:00:00 EDT</pubDate>
+      <dc:creator>Jackie Daumeyer</dc:creator>
+      <guid>https://jdaumeyer.com/posts/colony-cats/</guid>
+    </item>
+  </channel>
+</rss>

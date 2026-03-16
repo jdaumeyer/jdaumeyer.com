@@ -283,80 +283,52 @@ a:hover {
      }
  }
  /* end header.njk */
-.card-holder {
-    display: grid;
+/* begin postlist.njk */
+ .postlist {
+     --spacing: 0.5rem;
+     list-style: none;
+     padding: 0;
+     margin: 0;
+     --postlist-hover-transition-length: 300ms;
+ }
 
-    /* Two columns on a widescreen */
-    @media (min-width: 768px) {
-	grid-template-columns: 1fr 1fr;
-    }
-    grid-template-colums: 1fr
+ .postlink {
+     /* flex */
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
 
-    flex-flow: row wrap;
-    gap: var(--spacing, 1.5rem);
+     transition: var(--postlist-hover-transition-length);
+     padding: calc(var(--spacing)) 0em;
+     position: relative;
+     border-bottom: 2px solid var(--dark-accent, white);
 
-    & > .card {
-	width: auto;
-    }
-}
+     &:last-of-type {
+	 border-bottom: none;
+     }
 
+     /* Arrow on hover */
+     a:after {
+	 content: "→";
+	 transition: 200ms;
 
-.card {
-    border: 1px solid var(--dark-accent, grey);
-    border-radius: 16px;
-    padding: calc(var(--spacing) / 2);
-    transition: 200ms;
-    display: flex;
-    flex: 1 0 calc(49% - ( 2 *  var(--spacing))); /* Ensure 2 cards per line */
-    flex-direction: column;
-    justify-content: flex-start;
-    background-color: var(--light-accent, #f4f4f4);
-    margin-bottom: 1em;
+	 /* hide arrow when not hovered */ 
+	 display: inline-block; 
+	 color: var(--background-color);
+	 width: 0ch;
+     }
 
-    & svg {
-        height: 1.5em;
-    }
+     &:has(a:hover) {
+	 margin-left: calc(var(--spacing));
+	 margin-right: calc(var(--spacing));
 
-    & header {
-        margin: 0;
-        display: flex;
-        flex-direction: row;
-        gap: 1em;
-        justify-content: flex-start;
-    }
-
-    & h2 {
-        margin: 0;
-        font-size: 1.1rem;
-    }
-}
-
-a.card {
-    text-decoration: none;
-    color: var(--text-color, black);
-    box-shadow:
-	var(--background-color) 1px 1px 8px inset,
-	var(--text-color) -1px -1px 8px inset,
-	var(--dark-accent) 0 8px; /* bottom-border affordance */
-    width: max-content;
-
-    &:hover {
-        /* background-color: var(--dark-accent, lightgrey); */
-        cursor: pointer;
-        border: 1px solid var(--dark-accent, grey);
-	box-shadow:
-	    var(--background-color) 1px 1px 8px inset,
-	    var(--text-color) -1px -1px 8px inset,
-	    var(--dark-accent) 0 5px;
-        transform: scale(1.03);
-    }
-
-    &:active {
-        background-color: var(--dark-accent, lightgrey);
-        transform: scale(0.99);
-	box-shadow: var(--dark-accent) 0 -0px inset;
-    }
-}
+	 a:after {
+	     color: var(--text-color);
+	     width: 1ch;
+	 }
+     }
+ }
+/* end postlist.njk */
 /* begin footer.njk */
 footer {
     border-top: 2px dashed var(--dark-accent);
@@ -410,7 +382,7 @@ footer {
         <li>
           
           
-              <span class="current"> /about </span>
+              <a href="/about/"> /about </a>
           
         </li>
         
@@ -423,103 +395,29 @@ footer {
 
   <main id="main" class="stack">
     
-<article>
-    <section>
-        <h1> About </h1>
-        <ul>
-	    <li>I'm a web developer based in Ohio.</li>
-	    <li>I'm a woman in my 20s.</li>
-	    <li>I love reading and am an avid supporter of my local library.</li>
-	    <li>Playing board games with friends is one of my favorite things to do.</li>
-	    <li>I have been vegan my entire life.</li>
-	    <li>I'm a big fan of alt rock and riot grrrl music.</li>
-        </ul>
-    </section>
-    <section id="contact">
-        <h1> Contact </h1>
+<h1><i class="fa fa-briefcase"></i> Work</h1>
+<p>
+    Stuff that shows off my abilities
+</p>
+<p>
+    <a href="/blog/"> Back to full blog →</a>
+</p>
 
-        <p>
-            If you want to reach out to me directly: feel free to email me at
-	    <a href="mail@jdaumeyer.com">mail@jdaumeyer.com </a>.
-	    Otherwise, you'll find a list of the various other places I can be found on the web below.
-	    The list is short because I have a penchant for deleting social media that I don't use.
-        </p>
+<div>
 
-        <ul>
-            <li>
-		<a href="https://codeberg.org/jackie"><em>jackie</em> on codeberg.org</a>.
-		This is my preferred git host.
-		As such, you'll find most of my personal development and projects hosted here.
-	    </li>
-            <li>
-		<a href="https://github.com/jdaumeyer"><em>jdaumeyer</em> on github.com</a>.
-		I use github far more sparingly and I haven't really used it in quite some time.
-		But I have not yet found the need to delete the account.
-	    </li>
-            <li>
-		<a href="https://www.last.fm/user/octothorpe_"><em> octothorpe_ </em> on last.fm</a>.
-		In case you want to bear witness to my awful taste in music.
-	    </li>
-        </ul>
-    </section>
+<!-- begin postlist.njk -->
+<ol id="postlist" class="postlist stack h-feed"><li class="postlink h-entry">
+            <a class="u-url" href="/posts/capstone/"> Landlord-Tenant Communication Tool </a>
+            <time class="dt-published" datetime="Fri Dec 05 2025 19:00:00 GMT-0500 (Eastern Standard Time)"> 2025-12-06 </time>
+        </li><li class="postlink h-entry">
+            <a class="u-url" href="/posts/colony-cats/"> Colony Cats Website Redesign </a>
+            <time class="dt-published" datetime="Sun Apr 20 2025 20:00:00 GMT-0400 (Eastern Daylight Time)"> 2025-04-21 </time>
+        </li></ol>
+<!-- end postlist.njk -->
 
-    <section id="resume">
-        <h1> Resume </h1>
-	<p>
-	    I'm currently looking for work. If you're interested in seeing more of my professional experience,
-	    you can find my resume below.
-	</p>
-	
-        <!-- <div class="card-holder"> -->
-            <a href="jdaumeyer-resume.pdf" class="card">
-                <h2><i class="fa fa-file"></i>&nbsp;&nbsp;  Check out my Résumé </h2>
-            </a>
-            <!-- </div> -->
-    </section>
 
-    <section id="uses">
-        <h1> Uses </h1>
 
-        <p>
-            A list of all the things I use and why.
-        </p>
-
-            <details>
-                <summary>Software</summary>
-                <ul>
-                    <li>
-			<b>Emacs</b> is my main text editor.
-			Although I am an evil-mode user since vim kebindings are second nature to me.
-		    </li>
-                    <li>
-			<b>NixOS</b>. All of my machines currently run some variation of NixOS.
-			I've been using linux as my primary operating system since 2019 and there's no chance of that chaning
-			anytime soon.
-			Nix in particular is super nice because it uses a configuration file to setup an entire computer
-			declaratively. The language used in these files, however, could definitely use some work.
-		    </li>
-		    <li>
-			<b>KeepassXC</b>. A password manager is life changing nowadays.
-			I've been using Keepass for quite some time and it has been pretty good.
-			The ability to generate unique passwords for any account I need and not having to remember said
-			password is so releiving.
-		    </li>
-                </ul>
-            </details>
-
-            <details>
-                <summary>Hardware</summary>
-                <ul>
-                    <li>
-			Lenovo X1 Carbon Gen 5.
-			My current laptop.
-			It still holds up well and I plan to use it for many more years.
-		    </li>
-                </ul>
-            </details>
-    </section>
-</article>
-
+</div>
 
   </main>
 
