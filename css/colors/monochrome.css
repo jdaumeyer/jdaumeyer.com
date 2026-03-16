@@ -1,4 +1,4 @@
-* {
+:root {
     color-scheme: light dark;
     --background-color: light-dark(#fff, #000);
     --text-color: light-dark(#000, #fff);

@@ -1,9 +1,20 @@
 .card-holder {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+
+    /* Two columns on a widescreen */
+    @media (min-width: 768px) {
+	grid-template-columns: 1fr 1fr;
+    }
+    grid-template-colums: 1fr
+
     flex-flow: row wrap;
     gap: var(--spacing, 1.5rem);
+
+    & > .card {
+	width: auto;
+    }
 }
+
 
 .card {
     border: 1px solid var(--dark-accent, grey);
@@ -15,6 +26,7 @@
     flex-direction: column;
     justify-content: flex-start;
     background-color: var(--light-accent, #f4f4f4);
+    margin-bottom: 1em;
 
     & svg {
         height: 1.5em;
@@ -37,11 +49,26 @@
 a.card {
     text-decoration: none;
     color: var(--text-color, black);
+    box-shadow:
+	var(--background-color) 1px 1px 8px inset,
+	var(--text-color) -1px -1px 8px inset,
+	var(--dark-accent) 0 8px; /* bottom-border affordance */
+    width: max-content;
 
     &:hover {
-        background-color: var(--dark-accent, lightgrey);
+        /* background-color: var(--dark-accent, lightgrey); */
         cursor: pointer;
         border: 1px solid var(--dark-accent, grey);
+	box-shadow:
+	    var(--background-color) 1px 1px 8px inset,
+	    var(--text-color) -1px -1px 8px inset,
+	    var(--dark-accent) 0 5px;
         transform: scale(1.03);
+    }
+
+    &:active {
+        background-color: var(--dark-accent, lightgrey);
+        transform: scale(0.99);
+	box-shadow: var(--dark-accent) 0 -0px inset;
     }
 }

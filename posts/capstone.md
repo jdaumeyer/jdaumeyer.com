@@ -19,10 +19,8 @@ I was responsible for the frontend design of the app, ensuring that the form flo
 </div>
 
 <style>{% include "css/card.css" %}</style>
-<div class="card-holder">
-    <a href="https://github.com/capstone-au2025/project" class="card">
-        <h2><i class="fa fa-github"></i>&nbsp;&nbsp;  View on Github</h2>
-    </a>
-</div>
+<a href="https://github.com/capstone-au2025/project" class="card">
+<h2><i class="fa fa-github"></i>&nbsp;&nbsp;  View on Github</h2>
+</a>
 
 <img src="../../img/capstone.png">
