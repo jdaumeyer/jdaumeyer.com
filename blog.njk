@@ -4,10 +4,14 @@ tags: nav
 title: blog
 ---
 
+<style>{% include "css/bloglist.css" %}</style>
 <section id="bloglist">
-<h1> My Blog </h1>
-    <style>{% include "css/bloglist.css" %}</style>
+    <h1> My Blog </h1>
+    <div id="follow">
+	<h2> Follow </h2>
+	<a href="/feed.xml"> View the rss feed →</a>
+    </div>
     {% set postlist = collections.posts %}
-{% include "postlist.njk" %}
-{% include "taglist.njk" %}
+    {% include "postlist.njk" %}
+    {% include "taglist.njk" %}
 </section>

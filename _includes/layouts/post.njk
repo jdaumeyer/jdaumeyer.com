@@ -8,7 +8,7 @@ layout: "layouts/base.njk"
     <li class="article-publish-time chip"><time class="dt-published" datetime="{{page.date}}"> {{ page.date | date }}</time></li>
     {% for tag in tags | filterTagList %}
         {% set tagUrl %}/tags/{{tag | slugify}}/{% endset %}
-        <li class="article-tag chip"><a href="{{ tagUrl }}">{{tag}}</a></li>
+        <li class="article-tag chip"><a href="{{ tagUrl }}">{% tagicon tag %} {{tag}}</a></li>
     {% endfor %}
 </ul>
 <content class="p-content">

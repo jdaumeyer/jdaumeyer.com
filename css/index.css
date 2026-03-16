@@ -1,12 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap');
 :root {
-
     /* Colorscheme */
     color-scheme: light dark;
-    /* --background-color: light-dark(#eff1f5, #1e1e2e); */
-    /* --text-color: light-dark(#4c4f69, #cdd6f4); */
-    /* --light-accent: light-dark(#cba6f7, #ea76cb); */
-    /* --dark-accent: light-dark(#ca9ee6, #ea76cb); */
     --spacing: 2rem;
     sizing: border-box;
 }
@@ -33,13 +28,10 @@ body {
     padding: calc(var(--spacing)/4);
 }
 
-/* main { */
-/*     margin: 0 auto; */
-/* } */
-
 h1 {
     font-weight: 900;
     font-size: 1.8rem;
+    margin: 0;
 }
 
 h2 {

@@ -1,5 +1,8 @@
-import pluginWebc from "@11ty/eleventy-plugin-webc";
+// import pluginWebc from "@11ty/eleventy-plugin-webc";
+
 import { RenderPlugin } from "@11ty/eleventy";
+import { feedPlugin } from "@11ty/eleventy-plugin-rss";
+
 import { tagdescription, tagicon, filterTagList } from "./config/tags.js";
 
 export default function(eleventyConfig) {
@@ -37,6 +40,25 @@ export default function(eleventyConfig) {
     //     components: "_components/**/*.webc",
     // });
     eleventyConfig.addPlugin(RenderPlugin);
+
+    eleventyConfig.addPlugin(feedPlugin, {
+	type: "rss", 
+	outputPath: "/feed.xml",
+	collection: {
+	    name: "posts", // iterate over `collections.posts`
+	    limit: 10,     // 0 means no limit
+	},
+	metadata: {
+	    language: "en",
+	    title: "Jackie Daumeyer's Feed",
+	    subtitle: "Words written by me.",
+	    base: "https://jdaumeyer.com/",
+	    author: {
+		name: "Jackie Daumeyer",
+		email: "mail@jdaumeyer.com", // Optional
+	    }
+	}
+    });
 
     eleventyConfig.addFilter('date', function(str) {
         return new Date(str).toISOString().split('T')[0];
