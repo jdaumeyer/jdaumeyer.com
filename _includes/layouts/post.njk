@@ -3,15 +3,23 @@ layout: "layouts/base.njk"
 ---
 <style>{% include "css/post.css" %}</style>
 <article class="stack h-entry">
-<h1 class="p-name"> {{ title }} </h1>
-<ul class="article-meta">
-    <li class="article-publish-time chip"><time class="dt-published" datetime="{{page.date}}"> {{ page.date | date }}</time></li>
-    {% for tag in tags | filterTagList %}
-        {% set tagUrl %}/tags/{{tag | slugify}}/{% endset %}
-        <li class="article-tag chip"><a href="{{ tagUrl }}">{% tagicon tag %} {{tag}}</a></li>
-    {% endfor %}
-</ul>
-<content class="p-content">
-{{ content | safe }}
-</content>
+
+    <!-- title and metadata -->
+    <h1 class="p-name"> {{ title }} </h1>
+    <ul class="article-meta">
+	<li class="article-publish-time chip">
+	    <time class="dt-published" datetime="{{page.date}}">
+		<i class="fa fa-solid fa-calendar"></i>&nbsp;&nbsp;
+		{{ page.date | date }}
+	    </time>
+	</li>
+	{% for tag in tags | filterTagList %}
+	    {% set tagUrl %}/tags/{{tag | slugify}}/{% endset %}
+	    <li class="article-tag chip"><a href="{{ tagUrl }}">{% tagicon tag %} {{tag}}</a></li>
+	{% endfor %}
+    </ul>
+
+    <content class="p-content stack">
+	{{ content | safe }}
+    </content>
 </article>

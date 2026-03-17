@@ -8,6 +8,11 @@ article p {
     /* width: 65ch; */
 }
 
+article img {
+    aspect-ratio: auto;
+    width: 100%;
+}
+
 
 aside {
     background-color: var(--light-accent);
