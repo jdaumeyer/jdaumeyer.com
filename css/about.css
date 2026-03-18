@@ -1,0 +1,38 @@
+/* begin about.css */
+.uses-container {
+    display: flex;
+    flex-flow: row wrap;
+    gap: var(--spacing);
+    width: 100%;
+    justify-content: space-between;
+}
+
+details {
+    /* transform-property: transform; */
+    border: 2px solid #ffffff00;
+    border-radius: 15px;
+    /* width: 40%; */
+    flex: 1 0;
+    & summary {
+	cursor: pointer;
+	border: 2px solid var(--dark-accent);
+	width: min-content;
+	padding: calc(var(--spacing)/4);
+	border-radius: 15px;
+	font-weight: 800;
+    }
+
+    &[open] {
+	border: 2px solid var(--dark-accent);
+	/* transform: scale(1); */
+    }
+}
+
+details[open] {
+
+    & summary {
+        border: none;
+    }
+}
+/* end about.css */
+

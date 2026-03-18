@@ -40,7 +40,7 @@ h2 {
     margin: 0;
 }
 
-
+/* About Section */
 #about {
     display: flex;
 
@@ -68,65 +68,28 @@ a {
     border-bottom: 2px dotted;
     transition: 200ms;
     color: var(--text-color);
-}
 
-.uses-container {
-    display: flex;
-    flex-flow: row wrap;
-    gap: var(--spacing);
-    width: 100%;
-    justify-content: space-between;
-}
+    &:hover {
+	border-bottom: 2px solid;
 
-details {
-    /* transform-property: transform; */
-    border: 2px solid #ffffff00;
-    border-radius: 15px;
-    /* width: 40%; */
-    flex: 1 0;
-    & summary {
-	cursor: pointer;
-	border: 2px solid var(--dark-accent);
-	width: min-content;
-	padding: calc(var(--spacing)/4);
-	border-radius: 15px;
-	font-weight: 800;
     }
-
-    &[open] {
-	border: 2px solid var(--dark-accent);
-	/* transform: scale(1); */
-    }
-}
-
-details[open] {
-
-    & summary {
-        border: none;
-    }
-}
-
-a:hover {
-    border-bottom: 2px solid;
-    /* background-color: var(--dark-accent) */
-
 }
 
 .chip {
-        border: 1px solid var(--dark-accent);
-        background-color: var(--light-accent);
-        padding: calc(var(--spacing) / 4);
-        border-radius: 10px;
-        transition: 200ms;
+    border: 1px solid var(--dark-accent);
+    background-color: var(--light-accent);
+    padding: calc(var(--spacing) / 4);
+    border-radius: 10px;
+    transition: 200ms;
 
-        &:has(a):hover {
-            background-color: var(--dark-accent);
-            transform: scale(1.1);
-        }
+    &:has(a):hover {
+        background-color: var(--dark-accent);
+        transform: scale(1.1);
+    }
 
-        & a {
-            border: none;
-        }
+    & a {
+        border: none;
+    }
 }
 
 /* Stack Layout */
@@ -148,32 +111,30 @@ a:hover {
 
 /* https://www.a11yproject.com/posts/how-to-hide-content/ */
 .visually-hidden:not(:focus):not(:active) {
-	clip: rect(0 0 0 0);
-	clip-path: inset(50%);
-	height: 1px;
-	overflow: hidden;
-	position: absolute;
-	white-space: nowrap;
-	width: 1px;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
 }
 
 #skip-link {
-	text-decoration: none;
-	background: var(--background-color);
-	color: var(--text-color);
-	padding: 0.5rem 1rem;
-	border: 1px solid var(--color-gray-90);
-	border-radius: 2px;
+    text-decoration: none;
+    background: var(--background-color);
+    color: var(--text-color);
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--color-gray-90);
+    border-radius: 2px;
 }
 
 /* Prevent visually-hidden skip link fom pushing content around when focused */
 #skip-link.visually-hidden:focus {
-	position: absolute;
-	top: 1rem;
-	left: 1rem;
-	/* Ensure it is positioned on top of everything else when it is shown */
-	z-index: 999;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    /* Ensure it is positioned on top of everything else when it is shown */
+    z-index: 999;
 }
-
-
 
