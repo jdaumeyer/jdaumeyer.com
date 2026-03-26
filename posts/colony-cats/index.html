@@ -123,7 +123,7 @@ h2 {
     margin: 0;
 }
 
-
+/* About Section */
 #about {
     display: flex;
 
@@ -151,65 +151,28 @@ a {
     border-bottom: 2px dotted;
     transition: 200ms;
     color: var(--text-color);
-}
 
-.uses-container {
-    display: flex;
-    flex-flow: row wrap;
-    gap: var(--spacing);
-    width: 100%;
-    justify-content: space-between;
-}
+    &:hover {
+	border-bottom: 2px solid;
 
-details {
-    /* transform-property: transform; */
-    border: 2px solid #ffffff00;
-    border-radius: 15px;
-    /* width: 40%; */
-    flex: 1 0;
-    & summary {
-	cursor: pointer;
-	border: 2px solid var(--dark-accent);
-	width: min-content;
-	padding: calc(var(--spacing)/4);
-	border-radius: 15px;
-	font-weight: 800;
     }
-
-    &[open] {
-	border: 2px solid var(--dark-accent);
-	/* transform: scale(1); */
-    }
-}
-
-details[open] {
-
-    & summary {
-        border: none;
-    }
-}
-
-a:hover {
-    border-bottom: 2px solid;
-    /* background-color: var(--dark-accent) */
-
 }
 
 .chip {
-        border: 1px solid var(--dark-accent);
-        background-color: var(--light-accent);
-        padding: calc(var(--spacing) / 4);
-        border-radius: 10px;
-        transition: 200ms;
+    border: 1px solid var(--dark-accent);
+    background-color: var(--light-accent);
+    padding: calc(var(--spacing) / 4);
+    border-radius: 10px;
+    transition: 200ms;
 
-        &:has(a):hover {
-            background-color: var(--dark-accent);
-            transform: scale(1.1);
-        }
+    &:has(a):hover {
+        background-color: var(--dark-accent);
+        transform: scale(1.1);
+    }
 
-        & a {
-            border: none;
-        }
+    & a {
+        border: none;
+    }
 }
 
 /* Stack Layout */
@@ -231,31 +194,31 @@ a:hover {
 
 /* https://www.a11yproject.com/posts/how-to-hide-content/ */
 .visually-hidden:not(:focus):not(:active) {
-	clip: rect(0 0 0 0);
-	clip-path: inset(50%);
-	height: 1px;
-	overflow: hidden;
-	position: absolute;
-	white-space: nowrap;
-	width: 1px;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
 }
 
 #skip-link {
-	text-decoration: none;
-	background: var(--background-color);
-	color: var(--text-color);
-	padding: 0.5rem 1rem;
-	border: 1px solid var(--color-gray-90);
-	border-radius: 2px;
+    text-decoration: none;
+    background: var(--background-color);
+    color: var(--text-color);
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--color-gray-90);
+    border-radius: 2px;
 }
 
 /* Prevent visually-hidden skip link fom pushing content around when focused */
 #skip-link.visually-hidden:focus {
-	position: absolute;
-	top: 1rem;
-	left: 1rem;
-	/* Ensure it is positioned on top of everything else when it is shown */
-	z-index: 999;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    /* Ensure it is positioned on top of everything else when it is shown */
+    z-index: 999;
 }
 :root {
     color-scheme: light dark;
@@ -367,6 +330,11 @@ article p {
     /* width: 65ch; */
 }
 
+article img {
+    aspect-ratio: auto;
+    width: 100%;
+}
+
 
 aside {
     background-color: var(--light-accent);
@@ -402,13 +370,12 @@ footer {
 /* end footer.njk */</style>
   <script></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,200&icon_names=arrow_outward,mail,rss_feed,file">
-<!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=mail" /> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
   <a href="#main" id="skip-link" class="visually-hidden">Skip to main content</a>
+
   <!-- begin header.njk -->
 <header>
     <span class="slide-in-from-left"> jdaumeyer.com </span>
@@ -418,14 +385,14 @@ footer {
         <li>
           
           
-              <a href="/blog/"> /blog </a>
+              <a href="/"> /home </a>
           
         </li>
         
         <li>
           
           
-              <a href="/"> /home </a>
+              <a href="/blog/"> /blog </a>
           
         </li>
         
@@ -446,16 +413,24 @@ footer {
   <main id="main" class="stack">
     
 <article class="stack h-entry">
-<h1 class="p-name"> Colony Cats Website Redesign </h1>
-<ul class="article-meta">
-    <li class="article-publish-time chip"><time class="dt-published" datetime="Sun Apr 20 2025 20:00:00 GMT-0400 (Eastern Daylight Time)"> 2025-04-21</time></li>
-    
-        
-        <li class="article-tag chip"><a href="/tags/work/"><i class="fa fa-briefcase"></i> work</a></li>
-    
-</ul>
-<content class="p-content">
-<p>Colony Cats is a Columbus based cage free cat rescue in need of a refresed website.
+
+    <!-- title and metadata -->
+    <h1 class="p-name"> Colony Cats Website Redesign </h1>
+    <ul class="article-meta">
+	<li class="article-publish-time chip">
+	    <time class="dt-published" datetime="Sun Apr 20 2025 20:00:00 GMT-0400 (Eastern Daylight Time)">
+		<i class="fa fa-solid fa-calendar"></i>&nbsp;&nbsp;
+		2025-04-21
+	    </time>
+	</li>
+	
+	    
+	    <li class="article-tag chip"><a href="/tags/work/"><i class="fa fa-briefcase"></i> work</a></li>
+	
+    </ul>
+
+    <content class="p-content stack">
+	<p>Colony Cats is a Columbus based cage free cat rescue in need of a refresed website.
 I worked with a team to provide a redesign of their website.
 We worked together in Figma to create an interactive mockup which demonstrated our improved functionality.
 To guide our redesign, we created personas of each different type of user to make sure we accomadeted them in the final design.</p>
@@ -481,32 +456,44 @@ To guide our redesign, we created personas of each different type of user to mak
 <h2>Volunteer Page</h2>
 <img src="../../img/_PAGE_ Volunteer.png">
 
-</content>
+    </content>
 </article>
 
   </main>
 
   <!-- begin footer.njk -->
+
 <footer>
     <div class="colophone">
-        <em> Built using <a href="https://www.11ty.dev/">Eleventy v3.1.2 </a></em>.
-        <em> Hosted with <a href="https://codeberg.org/"> Codeberg Pages </a>.</em>
-        <em> View the <a href="https://codeberg.org/jackie/jdaumeyer">source code</a>.</em>
+	<em> Built using <a href="https://www.11ty.dev/">Eleventy v3.1.2 </a></em>.
+	<em> Hosted with <a href="https://codeberg.org/"> Codeberg Pages </a>.</em>
+	<em> View the <a href="https://codeberg.org/jackie/jdaumeyer">source code</a>.</em>
     </div>
     <nav class="sitemap">
-        <ul>
-            <li>
-                <a href="/blog">blog</a>
-                <ul>
-                    <li><a href="/tagsx"> tagx </a></li>
-                    <li><a href="/tagsy"> tagy </a></li>
-                    <li><a href="/now"> now </a></li>
-                </ul>
-            </li>
-            <li><a href="/about#contact"> contact </a></li>
-            <li><a href="/feed"> feed </a></li>
-            <li><a href="/about"> about </a></li>
-        </ul>
+	<ul>
+	    <li>
+		<a href="/blog">blog</a>
+		
+<div class="taglist-wrapper">
+    
+    <ul class="taglist">
+	
+            
+            <li class="">
+		<a href="/tags/work/" class="post-tag">
+		    
+		    work
+		</a>
+	    </li>
+	
+    </ul>
+</div>
+
+	    </li>
+	    <li><a href="/about#contact"> contact </a></li>
+	    <li><a href="/feed.xml"> feed </a></li>
+	    <li><a href="/about"> about </a></li>
+	</ul>
     </nav>
 </footer>
 <!-- end footer.njk -->
