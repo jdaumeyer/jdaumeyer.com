@@ -1,24 +1,21 @@
 <!-- begin footer.njk -->
+{% import "taglist.njk" as tl %}
 <footer>
     <div class="colophone">
-        <em> Built using <a href="https://www.11ty.dev/">{{ eleventy.generator }} </a></em>.
-        <em> Hosted with <a href="https://codeberg.org/"> Codeberg Pages </a>.</em>
-        <em> View the <a href="https://codeberg.org/jackie/jdaumeyer">source code</a>.</em>
+	<em> Built using <a href="https://www.11ty.dev/">{{ eleventy.generator }} </a></em>.
+	<em> Hosted with <a href="https://codeberg.org/"> Codeberg Pages </a>.</em>
+	<em> View the <a href="https://codeberg.org/jackie/jdaumeyer">source code</a>.</em>
     </div>
     <nav class="sitemap">
-        <ul>
-            <li>
-                <a href="/blog">blog</a>
-                <ul>
-                    <li><a href="/tagsx"> tagx </a></li>
-                    <li><a href="/tagsy"> tagy </a></li>
-                    <li><a href="/now"> now </a></li>
-                </ul>
-            </li>
-            <li><a href="/about#contact"> contact </a></li>
-            <li><a href="/feed"> feed </a></li>
-            <li><a href="/about"> about </a></li>
-        </ul>
+	<ul>
+	    <li>
+		<a href="/blog">blog</a>
+		{{ tl.taglist(collections, title="", icon=false, class="") }}
+	    </li>
+	    <li><a href="/about#contact"> contact </a></li>
+	    <li><a href="/feed.xml"> feed </a></li>
+	    <li><a href="/about"> about </a></li>
+	</ul>
     </nav>
 </footer>
 <!-- end footer.njk -->

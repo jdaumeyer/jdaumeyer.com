@@ -48,5 +48,7 @@ title: home
     <h1><a href="/blog/"> Blog →</a></h1>
     {% set postlist = collections.posts %}
     {% include "postlist.njk" %}
-    {% include "taglist.njk" %}
+{% import "taglist.njk" as tl %}
+		{{ tl.taglist(collections, title="", icons=false) }}
+    {#% include "taglist.njk" %#}
 </section>

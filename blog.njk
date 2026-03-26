@@ -13,5 +13,7 @@ title: blog
     </div>
     {% set postlist = collections.posts %}
     {% include "postlist.njk" %}
-    {% include "taglist.njk" %}
+    {% import "taglist.njk" as tl %}
+    {{ tl.taglist(collections, title="", icons=false) }}
+
 </section>

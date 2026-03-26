@@ -1,13 +1,20 @@
+{% macro taglist(taglist, title="Tags", icon=true, class="chip") %}
 <div class="taglist-wrapper">
-    <h2> Tags </h2>
+    {% if title != "" %}
+	<h2>{{ title }}</h2>
+    {% endif %}
     <ul class="taglist">
-	{% for tag in collections | getKeys | filterTagList | alphabetically %}
+	{% for tag in taglist | getKeys | filterTagList | alphabetically %}
             {% set tagUrl %}/tags/{{tag | slugify}}/{% endset %}
-            <li class="chip">
+            <li class="{{ class }}">
 		<a href="{{ tagUrl }}" class="post-tag">
-		    {% tagicon tag %} {{ tag }}
+		    {% if icon == true %}
+			{% tagicon tag %}
+		    {% endif %}
+		    {{ tag }}
 		</a>
 	    </li>
 	{% endfor %}
     </ul>
 </div>
+{% endmacro %}
