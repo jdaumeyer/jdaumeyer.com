@@ -23,4 +23,4 @@ I was responsible for the frontend design of the app, ensuring that the form flo
 <h2><i class="fa fa-github"></i>&nbsp;&nbsp;  View on Github</h2>
 </a>
 
-<img src="../../img/capstone.png">
+<img src="/img/capstone.png" alt="Landing page of a Landlord-Tenant communication tool. Which provides information about the tool as well was a button to get started">

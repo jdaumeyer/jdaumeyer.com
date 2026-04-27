@@ -1,18 +1,9 @@
-/* Blog page css */
-article {
-    /* display: grid; */
-    /* grid-template-columns: 1fr; */
-}
-
-article p {
-    /* width: 65ch; */
-}
-
+/* begin post.css */
 article img {
     aspect-ratio: auto;
     width: 100%;
+    height: auto;
 }
-
 
 aside {
     background-color: var(--light-accent);
@@ -25,3 +16,4 @@ aside {
     gap: var(--spacing);
     padding: 0;
 }
+/* end post.css */

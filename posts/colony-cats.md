@@ -27,9 +27,9 @@ To guide our redesign, we created personas of each different type of user to mak
 </div>
 
 <h2>Home Page</h2>
-<img src="../../img/_PAGE_ Homepage.png">
+<img src="/img/_PAGE_ Homepage.png" alt="Colony Cats homepage mockup" />
 <h2>Adoption Page</h2>
-<img src="../../img/_PAGE_ Adoption 1.png">
+<img src="/img/_PAGE_ Adoption 1.png" alt="Colony Cats Adoption page showing a grid of adoptable cats with options for filtering the cats shown" />
 <!-- ![Cat adoption page](../../img/_PAGE_ Adoption 1.png) -->
 <h2>Volunteer Page</h2>
-<img src="../../img/_PAGE_ Volunteer.png">
+<img src="/img/_PAGE_ Volunteer.png" alt="Colony Cats volunteer page.">

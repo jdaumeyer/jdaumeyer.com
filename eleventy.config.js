@@ -2,6 +2,7 @@
 
 import { RenderPlugin } from "@11ty/eleventy";
 import { feedPlugin } from "@11ty/eleventy-plugin-rss";
+import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 
 import { tagdescription, tagicon, filterTagList } from "./config/tags.js";
 
@@ -40,6 +41,23 @@ export default function(eleventyConfig) {
     //     components: "_components/**/*.webc",
     // });
     eleventyConfig.addPlugin(RenderPlugin);
+
+    eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
+	// output image formats
+	formats: ["webp"],
+
+	// output image widths
+	widths: [400, 800, "auto"],
+
+	// optional, attributes assigned on <img> nodes override these values
+	htmlOptions: {
+	    imgAttributes: {
+		loading: "lazy",
+		decoding: "async",
+	    },
+	    pictureAttributes: {}
+	},
+    });
 
     eleventyConfig.addPlugin(feedPlugin, {
 	type: "rss", 

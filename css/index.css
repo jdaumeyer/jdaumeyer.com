@@ -55,11 +55,12 @@ h2 {
         flex: 1 1 content;
     }
 
-    img {
+    img, picture {
         flex: 0 0 content;
-	max-height: 15rem;
+	max-width: 15rem;
 	aspect-ratio: 1 / 1;
 	align-self: center;
+	height: auto;
     }
 }
 
