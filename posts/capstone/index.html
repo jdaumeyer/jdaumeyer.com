@@ -1,6 +1,6 @@
 <!doctype html>
 
-<html>
+<html lang="en-US">
 <head>
   <title> jdaumeyer.com </title>
 
@@ -138,11 +138,12 @@ h2 {
         flex: 1 1 content;
     }
 
-    img {
+    img, picture {
         flex: 0 0 content;
-	max-height: 15rem;
+	max-width: 15rem;
 	aspect-ratio: 1 / 1;
 	align-self: center;
+	height: auto;
     }
 }
 
@@ -320,21 +321,12 @@ a {
      }
  }
  /* end header.njk */
-/* Blog page css */
-article {
-    /* display: grid; */
-    /* grid-template-columns: 1fr; */
-}
-
-article p {
-    /* width: 65ch; */
-}
-
+/* begin post.css */
 article img {
     aspect-ratio: auto;
     width: 100%;
+    height: auto;
 }
-
 
 aside {
     background-color: var(--light-accent);
@@ -347,6 +339,7 @@ aside {
     gap: var(--spacing);
     padding: 0;
 }
+/* end post.css */
 /* begin footer.njk */
 footer {
     border-top: 2px dashed var(--dark-accent);
@@ -446,7 +439,8 @@ footer {
 <a href="https://github.com/capstone-au2025/project" class="card">
 <h2><i class="fa fa-github"></i>&nbsp;&nbsp;  View on Github</h2>
 </a>
-<img src="../../img/capstone.png">
+<img src="/img/XyhIw7JJEn-400.webp" alt="Landing page of a Landlord-Tenant communication tool. Which provides information about the tool as well was a button to get started" loading="lazy" decoding="async" width="822" height="934" srcset="/img/XyhIw7JJEn-400.webp 400w, /img/XyhIw7JJEn-800.webp 800w, /img/XyhIw7JJEn-822.webp 822w" sizes="auto">
+
     </content>
 </article>
 

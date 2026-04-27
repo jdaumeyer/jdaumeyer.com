@@ -1,6 +1,6 @@
 <!doctype html>
 
-<html>
+<html lang="en-US">
 <head>
   <title> jdaumeyer.com </title>
 
@@ -138,11 +138,12 @@ h2 {
         flex: 1 1 content;
     }
 
-    img {
+    img, picture {
         flex: 0 0 content;
-	max-height: 15rem;
+	max-width: 15rem;
 	aspect-ratio: 1 / 1;
 	align-self: center;
+	height: auto;
     }
 }
 
@@ -320,21 +321,12 @@ a {
      }
  }
  /* end header.njk */
-/* Blog page css */
-article {
-    /* display: grid; */
-    /* grid-template-columns: 1fr; */
-}
-
-article p {
-    /* width: 65ch; */
-}
-
+/* begin post.css */
 article img {
     aspect-ratio: auto;
     width: 100%;
+    height: auto;
 }
-
 
 aside {
     background-color: var(--light-accent);
@@ -347,6 +339,7 @@ aside {
     gap: var(--spacing);
     padding: 0;
 }
+/* end post.css */
 /* begin footer.njk */
 footer {
     border-top: 2px dashed var(--dark-accent);
@@ -449,12 +442,12 @@ To guide our redesign, we created personas of each different type of user to mak
     </a>
 </div>
 <h2>Home Page</h2>
-<img src="../../img/_PAGE_ Homepage.png">
+<img src="/img/EhhyNWE54z-400.webp" alt="Colony Cats homepage mockup" loading="lazy" decoding="async" width="1920" height="2993" srcset="/img/EhhyNWE54z-400.webp 400w, /img/EhhyNWE54z-800.webp 800w, /img/EhhyNWE54z-1920.webp 1920w" sizes="auto">
 <h2>Adoption Page</h2>
-<img src="../../img/_PAGE_ Adoption 1.png">
+<img src="/img/hS7baw-4ac-400.webp" alt="Colony Cats Adoption page showing a grid of adoptable cats with options for filtering the cats shown" loading="lazy" decoding="async" width="1920" height="2514" srcset="/img/hS7baw-4ac-400.webp 400w, /img/hS7baw-4ac-800.webp 800w, /img/hS7baw-4ac-1920.webp 1920w" sizes="auto">
 <!-- ![Cat adoption page](../../img/_PAGE_ Adoption 1.png) -->
 <h2>Volunteer Page</h2>
-<img src="../../img/_PAGE_ Volunteer.png">
+<img src="/img/KUAPlhs2sj-400.webp" alt="Colony Cats volunteer page." loading="lazy" decoding="async" width="1920" height="1648" srcset="/img/KUAPlhs2sj-400.webp 400w, /img/KUAPlhs2sj-800.webp 800w, /img/KUAPlhs2sj-1920.webp 1920w" sizes="auto">
 
     </content>
 </article>
