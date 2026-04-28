@@ -1,14 +1,13 @@
 <!doctype html>
 
 <html lang="en-US">
-<head>
-  <title> jdaumeyer.com </title>
+    <head>
+	<title> jdaumeyer.com </title>
 
-  
-  
-  
-  <style>@import url('https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap');
-:root {
+	
+	
+	
+	<style>:root {
     /* Colorscheme */
     color-scheme: light dark;
     --spacing: 2rem;
@@ -314,10 +313,22 @@ footer {
     }
 }
 /* end footer.njk */</style>
-  <script></script>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
+	<script></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Jackie Daumeyer's personal website documenting her interests and thoughts">
+
+	<!-- Defer Font Awesome CSS -->
+	<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+	<noscript>
+	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	</noscript>
+
+	<!-- Defer Font CSS -->
+	<link rel="preload" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+	<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap">
+	</noscript>
+
+    </head>
 
 <body>
   <a href="#main" id="skip-link" class="visually-hidden">Skip to main content</a>

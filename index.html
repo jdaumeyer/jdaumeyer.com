@@ -1,14 +1,13 @@
 <!doctype html>
 
 <html lang="en-US">
-<head>
-  <title> jdaumeyer.com </title>
+    <head>
+	<title> jdaumeyer.com </title>
 
-  
-  
-  
-  <style>@import url('https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap');
-:root {
+	
+	
+	
+	<style>:root {
     /* Colorscheme */
     color-scheme: light dark;
     --spacing: 2rem;
@@ -435,7 +434,7 @@ footer {
     }
 }
 /* end footer.njk */</style>
-  <script>const user = "octothorpe_";
+	<script>const user = "octothorpe_";
  const url = `https://lastfm-last-played.biancarosa.com.br/${user}/latest-song`;
  fetch(url)
      .then((response) => {
@@ -455,9 +454,21 @@ footer {
 	 console.log(error);
 	 document.querySelector("#last-fm-song-name").innerText = "Error fetching song";
      });</script>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Jackie Daumeyer's personal website documenting her interests and thoughts">
+
+	<!-- Defer Font Awesome CSS -->
+	<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+	<noscript>
+	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	</noscript>
+
+	<!-- Defer Font CSS -->
+	<link rel="preload" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+	<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap">
+	</noscript>
+
+    </head>
 
 <body>
   <a href="#main" id="skip-link" class="visually-hidden">Skip to main content</a>
@@ -512,7 +523,7 @@ footer {
 	    This website houses my writing, projects, and documents my life.
 	</p>
     </div>
-    <img src="/k_ONzSxBPn-400.webp" alt="Picture of the author" loading="lazy" decoding="async" width="800" height="800" srcset="/k_ONzSxBPn-400.webp 400w, /k_ONzSxBPn-800.webp 800w" sizes="auto">
+    <img src="/Uo8yI5vTTR-400.webp" alt="Picture of the author" loading="lazy" decoding="async" width="800" height="800" srcset="/Uo8yI5vTTR-400.webp 400w, /Uo8yI5vTTR-600.webp 600w, /Uo8yI5vTTR-800.webp 800w" sizes="auto">
 </section>
 
 <section id="cards" class="card-holder">
