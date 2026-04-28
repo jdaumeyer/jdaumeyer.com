@@ -47,7 +47,7 @@ export default function(eleventyConfig) {
 	formats: ["webp"],
 
 	// output image widths
-	widths: [400, 800, "auto"],
+	widths: [400, 600, "auto"],
 
 	// optional, attributes assigned on <img> nodes override these values
 	htmlOptions: {
@@ -56,6 +56,10 @@ export default function(eleventyConfig) {
 		decoding: "async",
 	    },
 	    pictureAttributes: {}
+	},
+	sharpWebpOptions: {
+	    quality: 50,
+	    nearLossless: true,
 	},
     });
 
