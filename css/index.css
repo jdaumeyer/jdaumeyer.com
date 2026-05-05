@@ -12,6 +12,7 @@ body {
     color: var(--text-color);
     fill: var(--text-color);
     font-family: "Schibsted Grotesk", sans-serif;
+    font-display: swap;
     line-height: 1.75rem;
     max-width: min(80ch, 90vw);
     min-height: 100vh;
@@ -56,8 +57,8 @@ h2 {
 
     img, picture {
         flex: 0 0 content;
+	width: 100%;
 	max-width: 15rem;
-	aspect-ratio: 1 / 1;
 	align-self: center;
 	height: auto;
     }

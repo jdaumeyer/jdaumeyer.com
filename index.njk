@@ -18,7 +18,12 @@ title: home
 	    This website houses my writing, projects, and documents my life.
 	</p>
     </div>
-    <img src="img/jackie.png" alt="Picture of the author"></img>
+    <img src="img/jackie.png"
+	 alt="Picture of the author"
+	 loading="eager"
+	 fetchpriority="high"></img>
+
+    {#% image "img/jackie.png", alt="Picture of the author", loading="eager"  %#}
 </section>
 
 <section id="cards" class="card-holder">

@@ -1,24 +1,30 @@
+<link rel="preconnect" href="https://lastfm-last-played.biancarosa.com.br/" />
 <script>
- const user = "octothorpe_";
- const url = `https://lastfm-last-played.biancarosa.com.br/${user}/latest-song`;
- fetch(url)
-     .then((response) => {
-	 if (response.ok) {
-	     return response.json();
-	 } else {
-	     throw new Error("lastfm.njk: response error " + response.status);
-	 }
-     })
-     .then((body) => {
-	 const song = body.track;
+ async function fetchSong() {
+     const user = "octothorpe_";
+     const url = `https://lastfm-last-played.biancarosa.com.br/${user}/latest-song`;
 
-	 document.querySelector("#last-fm-song-name").innerText = song.name;
-	 document.querySelector("#last-fm-artist-name").innerText = "By " + song.artist["#text"];
-     })
-     .catch((error) => {
-	 console.log(error);
-	 document.querySelector("#last-fm-song-name").innerText = "Error fetching song";
-     });
+     fetch(url)
+	 .then((response) => {
+	     if (response.ok) {
+		 return response.json();
+	     } else {
+		 throw new Error("lastfm.njk: response error " + response.status);
+	     }
+	 })
+	 .then((body) => {
+	     const song = body.track;
+
+	     document.querySelector("#last-fm-song-name").innerText = song.name;
+	     document.querySelector("#last-fm-artist-name").innerText = "By " + song.artist["#text"];
+
+	 })
+	 .catch((error) => {
+	     console.log(error);
+	     document.querySelector("#last-fm-song-name").innerText = "Error fetching song";
+	 });
+ };
+ window.addEventListener("DOMContentLoaded", fetchSong);
 </script>
 
 <!-- begin lastfm.njk -->

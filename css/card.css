@@ -5,7 +5,7 @@
     @media (min-width: 768px) {
 	grid-template-columns: 1fr 1fr;
     }
-    grid-template-colums: 1fr
+    grid-template-colums: 1fr;
 
     flex-flow: row wrap;
     gap: var(--spacing, 1.5rem);

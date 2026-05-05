@@ -2,9 +2,13 @@
 
 import { RenderPlugin } from "@11ty/eleventy";
 import { feedPlugin } from "@11ty/eleventy-plugin-rss";
-import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
+import { Image, eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 
 import { tagdescription, tagicon, filterTagList } from "./config/tags.js";
+
+import CleanCSS from "clean-css";
+import postcss from "postcss";
+import postcssNested from "postcss-nested";
 
 export default function(eleventyConfig) {
     // Watch CSS files
@@ -23,6 +27,14 @@ export default function(eleventyConfig) {
 	// Supported selectors:
 	// https://www.npmjs.com/package/posthtml-match-helper
 	bundleHtmlContentFromSelector: "style",
+	transforms: [
+	    async function(content) {
+		// type contains the bundle name.
+		let { type, page } = this;
+		let result = await postcss([postcssNested]).process(content, { from: page.inputPath, to: null });
+		return new CleanCSS({}).minify(result.css).styles;
+	    }
+	]
     });
     
     // Bundle <script> content and adds a {% js %} paired shortcode
@@ -47,13 +59,14 @@ export default function(eleventyConfig) {
 	formats: ["webp"],
 
 	// output image widths
-	widths: [400, 600, "auto"],
+	widths: [300, 400, 600, "auto"],
 
 	// optional, attributes assigned on <img> nodes override these values
 	htmlOptions: {
 	    imgAttributes: {
 		loading: "lazy",
 		decoding: "async",
+		sizes: "(width <= 400px) 300px, (width <= 600px) 400px, 800px",
 	    },
 	    pictureAttributes: {}
 	},
@@ -61,6 +74,7 @@ export default function(eleventyConfig) {
 	    quality: 50,
 	    nearLossless: true,
 	},
+	fallback: "smallest",
     });
 
     eleventyConfig.addPlugin(feedPlugin, {
@@ -80,6 +94,10 @@ export default function(eleventyConfig) {
 		email: "mail@jdaumeyer.com", // Optional
 	    }
 	}
+    });
+
+    eleventyConfig.addFilter("cssmin", function (code) {
+	return new CleanCSS({}).minify(code).styles;
     });
 
     eleventyConfig.addFilter('date', function(str) {
